@@ -14,8 +14,7 @@
 
 import os
 import sys
-from configparser import RawConfigParser
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -24,6 +23,7 @@ project = 'nhl'
 copyright = '2019, Matt Hostetter'
 author = 'Matt Hostetter'
 
+from configparser import RawConfigParser
 def get_version():
     """Return package version from setup.cfg"""
     config = RawConfigParser()
@@ -47,8 +47,12 @@ release = version
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
     'sphinx.ext.doctest',
     'sphinx.ext.coverage',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.mathjax',
+    'nbsphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,7 +62,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md', '.ipynb']
 
 # The master toctree document.
 master_doc = 'index'
@@ -73,7 +77,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', '.ipynb_checkpoints', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -85,6 +89,10 @@ pygments_style = None
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'collapse_navigation': False,
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
