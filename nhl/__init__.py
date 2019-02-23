@@ -1,1 +1,1 @@
-print("Hello world")
+from .player import Player
