@@ -1,35 +1,47 @@
+"""
+Module containing NHL player objects
+"""
+
 from dataclasses import dataclass, field, InitVar
 import datetime
 
 @dataclass(frozen=True)
 class Player:
-    """NHL player object.
+    """
+    NHL player object.
 
     This is the detailed docstring.
-
-    Attributes:    
-        id (int): player's NHL statsapi universal ID
-        name (int): player's full name
-        birth_date (datetime.date): player's date of birth
-        birth_city (str): player's birth city
-        birth_country (str): player's birth country
-
-        first_name (str): player's first name
-        last_name (str): player's last name
-        height_ft (int): player's height in feet
-        height_in (int): player's height in inches
     """
     id: int
-    name: str = ""
+    """int: The NHL statsapi universal player ID"""
+
+    name: str = None
+    """str: Player's full name"""
+
     number: int = None
+    """int: Player's primary number"""
+
     position: str = None
+    """str: Player's primary position ("LW", "C", "RW", "D", "G")"""
+
     height: int = None
+    """int: Player's height in total inches"""
+
     weight: int = None
+    """int: Player's weight in lbs"""
+
     shoots_catches: str = None
+    """str: Indication of whether the player shoots (skater)/catches (goalie) "L" or "R" """
+
     birth_date_str: InitVar[str] = None
     birth_date: datetime.date = field(init=False)
-    birth_city: str = ""
-    birth_country: str = ""
+    """:class:`datetime.date`: Player's birth date"""
+
+    birth_city: str = None
+    """str: Player's birth city"""
+
+    birth_country: str = None
+    """str: Player's birth country"""
 
     def __post_init__(self, birth_date_str):
         if birth_date_str:
@@ -42,16 +54,20 @@ class Player:
 
     @property
     def first_name(self):
+        """str: Player's first name"""
         return self.name.split(" ", 1)[0]
 
     @property
     def last_name(self):
+        """str: Player's last name"""
         return self.name.split(" ", 1)[1]
 
     @property
     def height_ft(self):
+        """int: Height in feet (:py:attr:`height` // 12)"""
         return self.height // 12 if self.height else None
 
     @property
     def height_in(self):
+        """int: Height in inches (:py:attr:`height` % 12)"""
         return self.height % 12 if self.height else None
