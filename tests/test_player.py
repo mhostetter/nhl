@@ -8,29 +8,33 @@ def test_fail_no_args():
     with pytest.raises(TypeError):
         player = nhl.Player()
 
+def make_player():
+    return nhl.Player(1, "Alex Ovechkin", 8, "LW", 75, 235, "R", "1985-09-17", "Moscow", "RUS")
+
 def test_frozen():
-    player = nhl.Player(1, "Alex Ovechkin", 8, "LW")
+    player = make_player()
     with pytest.raises(dataclasses.FrozenInstanceError):
         player.id = 2
 
+def test_flyweight():
+    player_1 = make_player()
+    player_2 = make_player()
+    assert player_1 is player_2
+    assert player_1 == player_2
+
 def test_name_parse():
-    player = nhl.Player(1, "Alex Ovechkin", 8, "LW")
+    player = make_player()
     assert player.first_name == "Alex"
     assert player.last_name == "Ovechkin"
 
 def test_height_convert():
-    player = nhl.Player(1, "Alex Ovechkin", 8, "LW")
-    assert player.height is None
-    assert player.height_ft is None
-    assert player.height_in is None
-
-    player = nhl.Player(1, "Alex Ovechkin", 8, "LW", height=75)
+    player = make_player()
     assert player.height == 75
     assert player.height_ft == 6
     assert player.height_in == 3
 
 def test_birth_date_parse():
-    player = nhl.Player(1, "Alex Ovechkin", 8, "LW", birth_date_str="1985-09-17")
+    player = make_player()
     assert isinstance(player.birth_date, datetime.date)
     assert player.birth_date.year == 1985
     assert player.birth_date.month == 9
