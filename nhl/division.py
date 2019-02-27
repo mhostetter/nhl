@@ -13,6 +13,7 @@ class Division(Flyweight):
     This is the detailed docstring.
     """
     __slots__ = ["id", "name", "name_short", "abbreviation"]
+    _instances = {}
 
     id: int
     """int: The NHL statsapi universal division ID"""

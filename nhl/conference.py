@@ -13,6 +13,7 @@ class Conference(Flyweight):
     This is the detailed docstring.
     """
     __slots__ = ["id", "name"]
+    _instances = {}
 
     id: int
     """int: The NHL statsapi universal conference ID"""

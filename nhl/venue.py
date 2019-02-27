@@ -13,6 +13,7 @@ class Venue(Flyweight):
     This is the detailed docstring.
     """
     __slots__ = ["id", "name", "city", "timezone", "timezone_offset"]
+    _instances = {}
 
     id: int
     """int: The NHL statsapi universal venue ID"""
