@@ -5,7 +5,7 @@ import pytest
 import nhl
 
 def test_fail_no_args():
-    with pytest.raises(TypeError):
+    with pytest.raises((IndexError, TypeError)):
         player = nhl.Player()
 
 def make_player():
