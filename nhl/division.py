@@ -27,5 +27,5 @@ class Division(Flyweight):
     abbreviation: str
     """str: Division abbreviated name"""
 
-    def _key(cls, *args, **kwargs):
-        return args[0]
+    def _key(cls, id, *args, **kwargs):
+        return id

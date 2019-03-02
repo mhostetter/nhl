@@ -21,5 +21,5 @@ class Franchise(Flyweight):
     name: str
     """str: Franchise name"""
 
-    def _key(cls, *args, **kwargs):
-        return args[0]
+    def _key(cls, id, *args, **kwargs):
+        return id

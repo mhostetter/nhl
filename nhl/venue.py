@@ -30,5 +30,5 @@ class Venue(Flyweight):
     timezone_offset: int
     """int: Timezone offset from UTC"""
 
-    def _key(cls, *args, **kwargs):
-        return args[0]
+    def _key(cls, id, *args, **kwargs):
+        return id

@@ -47,8 +47,8 @@ class Player(Flyweight):
     birth_country: str
     """str: Player's birth country"""
 
-    def _key(cls, *args, **kwargs):
-        return args[0]
+    def _key(cls, id, *args, **kwargs):
+        return id
 
     def __post_init__(self, birth_date):
         year = int(birth_date.split("-")[0])
