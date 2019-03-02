@@ -96,3 +96,8 @@ class Player(Flyweight):
     def height_in(self):
         """int: Height in inches (:py:attr:`height` % 12)"""
         return self.height % 12 if self.height else None
+
+    @property
+    def age(self):
+        """int: Current age in years"""
+        return (datetime.date.today() - self.birth_date).days // 365
