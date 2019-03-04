@@ -1,7 +1,7 @@
 """
 Module containing NHL division objects
 """
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass
 
 from .flyweight import Flyweight
 
