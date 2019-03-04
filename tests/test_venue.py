@@ -8,7 +8,7 @@ def test_fail_no_args():
         venue = nhl.Venue()
 
 def make_venue():
-    return nhl.Venue(5094, "Capital One Arena")
+    return nhl.statsapi.fetch_venue(5094)
 
 def test_frozen():
     venue = make_venue()
@@ -20,3 +20,8 @@ def test_flyweight():
     venue_2 = make_venue()
     assert venue_1 is venue_2
     assert venue_1 == venue_2
+
+def test_values():
+    venue = make_venue()
+    assert venue.id == 5094
+    assert venue.name == "Capital One Arena"

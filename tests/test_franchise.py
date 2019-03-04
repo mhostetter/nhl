@@ -8,7 +8,7 @@ def test_fail_no_args():
         franchise = nhl.Franchise()
 
 def make_franchise():
-    return nhl.Franchise(24, "Capitals")
+    return nhl.statsapi.fetch_franchise(24)
 
 def test_frozen():
     franchise = make_franchise()
@@ -20,3 +20,8 @@ def test_flyweight():
     franchise_2 = make_franchise()
     assert franchise_1 is franchise_2
     assert franchise_1 == franchise_2
+
+def test_values():
+    franchise = make_franchise()
+    assert franchise.id == 24
+    assert franchise.name == "Capitals"
