@@ -1,3 +1,5 @@
+from . import statsapi
+
 from .list import List
 
 from .conference import Conference
