@@ -1,7 +1,7 @@
 """
 Module containing NHL conference objects
 """
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass
 
 from .flyweight import Flyweight
 
@@ -12,7 +12,7 @@ class Conference(Flyweight):
 
     This is the detailed docstring.
     """
-    __slots__ = ["id", "name"]
+    __slots__ = ["id", "name", "name_short", "abbreviation"]
     _instances = {}
 
     id: int
@@ -20,6 +20,12 @@ class Conference(Flyweight):
 
     name: str
     """str: Conference name"""
+
+    name_short: str
+    """str: Conference name shortened"""
+
+    abbreviation: str
+    """str: Conference abbreviation"""
 
     def _key(cls, id, *args, **kwargs):
         return id

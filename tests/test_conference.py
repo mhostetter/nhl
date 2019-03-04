@@ -8,7 +8,7 @@ def test_fail_no_args():
         conference = nhl.Conference()
 
 def make_conference():
-    return nhl.Conference(6, "Eastern")
+    return nhl.Conference(6, "Eastern", "East", "E")
 
 def test_frozen():
     conference = make_conference()
