@@ -1,0 +1,44 @@
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2019. All Rights Reserved.",
+  "teams" : [ {
+    "id" : 15,
+    "name" : "Washington Capitals",
+    "link" : "/api/v1/teams/15",
+    "venue" : {
+      "id" : 5094,
+      "name" : "Capital One Arena",
+      "link" : "/api/v1/venues/5094",
+      "city" : "Washington",
+      "timeZone" : {
+        "id" : "America/New_York",
+        "offset" : -5,
+        "tz" : "EST"
+      }
+    },
+    "abbreviation" : "WSH",
+    "teamName" : "Capitals",
+    "locationName" : "Washington",
+    "firstYearOfPlay" : "1974",
+    "division" : {
+      "id" : 18,
+      "name" : "Metropolitan",
+      "nameShort" : "Metro",
+      "link" : "/api/v1/divisions/18",
+      "abbreviation" : "M"
+    },
+    "conference" : {
+      "id" : 6,
+      "name" : "Eastern",
+      "link" : "/api/v1/conferences/6"
+    },
+    "franchise" : {
+      "franchiseId" : 24,
+      "teamName" : "Capitals",
+      "link" : "/api/v1/franchises/24"
+    },
+    "shortName" : "Washington",
+    "officialSiteUrl" : "http://www.washingtoncapitals.com/",
+    "franchiseId" : 24,
+    "active" : true
+  } ]
+}
