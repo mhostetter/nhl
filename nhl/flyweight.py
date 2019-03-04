@@ -17,6 +17,13 @@ class Flyweight:
         key = cls._key(cls, *args, **kwargs)
         return cls._instances.setdefault(key, super(type(cls), cls).__new__(cls))
 
+    def _key(cls, *args, **kwargs):
+        raise NotImplementedError
+
+    @classmethod
+    def keys(cls):
+        return cls._instances.keys()
+
     @classmethod
     def has_key(cls, *args):
         key = args if len(args) > 1 else args[0]
@@ -26,7 +33,3 @@ class Flyweight:
     def from_key(cls, *args):
         key = args if len(args) > 1 else args[0]
         return cls._instances.get(key, None)
-
-    def _key(cls, *args, **kwargs):
-        # return (args, tuple(kargs.items()))
-        raise NotImplementedError
