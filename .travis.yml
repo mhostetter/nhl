@@ -5,6 +5,7 @@ before_install:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
 install:
   - pip install dataclasses
+  - pip install requests
   - pip install .
 script:
   - pytest
