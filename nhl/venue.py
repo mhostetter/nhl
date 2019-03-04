@@ -1,7 +1,7 @@
 """
 Module containing NHL venue objects
 """
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass
 
 from .flyweight import Flyweight
 
@@ -12,7 +12,7 @@ class Venue(Flyweight):
 
     This is the detailed docstring.
     """
-    __slots__ = ["id", "name", "city", "timezone", "timezone_offset"]
+    __slots__ = ["id", "name"]
     _instances = {}
 
     id: int
@@ -20,15 +20,6 @@ class Venue(Flyweight):
 
     name: str
     """str: Venue name"""
-
-    city: str
-    """int: Venue city"""
-
-    timezone: str
-    """str: Timezone of the venue"""
-
-    timezone_offset: int
-    """int: Timezone offset from UTC"""
 
     def _key(cls, id, *args, **kwargs):
         return id

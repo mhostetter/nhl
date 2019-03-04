@@ -8,7 +8,7 @@ def test_fail_no_args():
         venue = nhl.Venue()
 
 def make_venue():
-    return nhl.Venue(5094, "Capital One Arena", "Washington", "America/New_York", -5)
+    return nhl.Venue(5094, "Capital One Arena")
 
 def test_frozen():
     venue = make_venue()
