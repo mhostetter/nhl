@@ -1,7 +1,7 @@
 """
 Module containing NHL player objects
 """
-from dataclasses import dataclass, field, InitVar
+from dataclasses import dataclass
 import datetime
 
 from .flyweight import Flyweight
@@ -38,7 +38,7 @@ class Player(Flyweight):
     shoots_catches: str
     """str: Indication of whether the player shoots (skater)/catches (goalie) "L" or "R" """
 
-    birth_date: InitVar[str]
+    birth_date: datetime.date
     """:class:`datetime.date`: Player's birth date"""
 
     birth_city: str
@@ -70,12 +70,6 @@ class Player(Flyweight):
             key or `None` if key not found
         """
         return super().from_key(id)
-
-    def __post_init__(self, birth_date):
-        year = int(birth_date.split("-")[0])
-        month = int(birth_date.split("-")[1])
-        day = int(birth_date.split("-")[2])
-        object.__setattr__(self, "birth_date", datetime.date(year, month, day))
 
     @property
     def first_name(self):

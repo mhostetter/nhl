@@ -9,7 +9,8 @@ def test_fail_no_args():
         player = nhl.Player()
 
 def make_player():
-    return nhl.Player(8471214, "Alex Ovechkin", 8, "LW", 75, 235, "R", "1985-09-17", "Moscow", "RUS")
+    return nhl.Player(8471214, "Alex Ovechkin", 8, "LW", 75, 235, "R",
+        datetime.date(1985, 9, 17), "Moscow", "RUS")
 
 def test_frozen():
     player = make_player()
