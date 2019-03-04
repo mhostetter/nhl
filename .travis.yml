@@ -1,6 +1,8 @@
 language: python
 python:
   - "3.6"
+before_install:
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
 install:
   - pip install dataclasses
   - pip install .
