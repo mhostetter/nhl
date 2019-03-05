@@ -1,8 +1,8 @@
 .. currentmodule:: nhl
 
-:class:`nhl.Venue`
-==================
+:class:`nhl.Team`
+=================
 
-.. autoclass:: Venue
+.. autoclass:: Team
    :members:
    :inherited-members:

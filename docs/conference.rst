@@ -1,7 +1,7 @@
 .. currentmodule:: nhl
 
-:class:`Conference`
-===================
+:class:`nhl.Conference`
+=======================
 
 .. autoclass:: Conference
    :members:

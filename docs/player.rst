@@ -1,7 +1,7 @@
 .. currentmodule:: nhl
 
-:class:`Player`
-===============
+:class:`nhl.Player`
+===================
 
 .. autoclass:: Player
    :members:

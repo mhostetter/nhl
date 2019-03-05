@@ -1,7 +1,7 @@
 .. currentmodule:: nhl
 
-:class:`Franchise`
-==================
+:class:`nhl.Franchise`
+======================
 
 .. autoclass:: Franchise
    :members:

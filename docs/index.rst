@@ -4,7 +4,7 @@ Welcome to nhl's documentation!
 .. toctree::
    :maxdepth: 2
 
-   example_1
+   examples
    nhl
 
 Indices and tables

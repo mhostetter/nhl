@@ -1,7 +1,7 @@
 .. currentmodule:: nhl
 
-:class:`Division`
-=================
+:class:`nhl.Division`
+=====================
 
 .. autoclass:: Division
    :members:

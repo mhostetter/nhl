@@ -2,12 +2,15 @@ Module: :mod:`nhl`
 ==================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   statsapi
    conference
    division
    franchise
+   list
    player
+   team
    venue
 
 .. automodule:: nhl
