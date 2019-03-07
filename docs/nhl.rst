@@ -10,6 +10,7 @@ Module: :mod:`nhl`
    franchise
    gametime
    list
+   location
    player
    team
    venue
