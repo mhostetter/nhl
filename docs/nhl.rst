@@ -8,6 +8,7 @@ Module: :mod:`nhl`
    conference
    division
    franchise
+   gametime
    list
    player
    team
