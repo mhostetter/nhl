@@ -12,6 +12,6 @@ before_script:
   - pip install pytest-cov
   - pip install codecov
 script:
-  - pytest --cov=./
+  - pytest --cov=nhl tests/
 after_success:
   - codecov
