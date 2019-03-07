@@ -31,8 +31,7 @@ def test_values():
     assert player.number == 8
     assert player.position == "LW"
     assert player.height == 75
-    assert player.height_ft == 6
-    assert player.height_in == 3
+    assert player.height_ft_in == (6, 3)
     assert player.weight == 235
     assert player.shoots_catches == "R"
     assert player.birth_date.year == 1985

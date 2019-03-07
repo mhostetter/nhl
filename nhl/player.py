@@ -82,14 +82,9 @@ class Player(Flyweight):
         return self.name.split(" ", 1)[1]
 
     @property
-    def height_ft(self):
-        """int: Height in feet (:py:attr:`height` // 12)"""
-        return self.height // 12 if self.height else None
-
-    @property
-    def height_in(self):
-        """int: Height in inches (:py:attr:`height` % 12)"""
-        return self.height % 12 if self.height else None
+    def height_ft_in(self):
+        """int: Height in feet and inches (:py:attr:`height` // 12, :py:attr:`height` % 12)"""
+        return (self.height // 12, self.height % 12) if self.height else None
 
     @property
     def age(self):
