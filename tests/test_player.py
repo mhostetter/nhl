@@ -9,7 +9,7 @@ def test_fail_no_args():
         player = nhl.Player()
 
 def make_player():
-    return nhl.statsapi.fetch_player(8471214)
+    return nhl.statsapi.player(8471214)
 
 def test_frozen():
     player = make_player()

@@ -3,6 +3,7 @@ from . import statsapi
 from .conference import Conference
 from .division import Division
 from .franchise import Franchise
+from .game import Game
 from .gametime import Gametime
 from .list import List
 from .location import Location

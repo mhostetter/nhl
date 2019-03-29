@@ -9,7 +9,7 @@ def test_fail_no_args():
         team = nhl.Team()
 
 def make_team():
-    return nhl.statsapi.fetch_team(15)
+    return nhl.statsapi.team(15)
 
 def test_frozen():
     team = make_team()

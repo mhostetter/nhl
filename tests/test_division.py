@@ -8,7 +8,7 @@ def test_fail_no_args():
         division = nhl.Division()
 
 def make_division():
-    return nhl.statsapi.fetch_division(18)
+    return nhl.statsapi.division(18)
 
 def test_frozen():
     division = make_division()

@@ -8,7 +8,7 @@ def test_fail_no_args():
         franchise = nhl.Franchise()
 
 def make_franchise():
-    return nhl.statsapi.fetch_franchise(24)
+    return nhl.statsapi.franchise(24)
 
 def test_frozen():
     franchise = make_franchise()

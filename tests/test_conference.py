@@ -8,7 +8,7 @@ def test_fail_no_args():
         conference = nhl.Conference()
 
 def make_conference():
-    return nhl.statsapi.fetch_conference(6)
+    return nhl.statsapi.conference(6)
 
 def test_frozen():
     conference = make_conference()

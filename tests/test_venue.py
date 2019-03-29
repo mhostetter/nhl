@@ -8,7 +8,7 @@ def test_fail_no_args():
         venue = nhl.Venue()
 
 def make_venue():
-    return nhl.statsapi.fetch_venue(5094)
+    return nhl.statsapi.venue(5094)
 
 def test_frozen():
     venue = make_venue()

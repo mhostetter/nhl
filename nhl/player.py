@@ -71,6 +71,9 @@ class Player(Flyweight):
         """
         return super().from_key(id)
 
+    # def __repr__(self):
+    #     return "<{}: {:>2} {:<2} {:<15}>".format(self.__class__.__name__, self.number, self.position, self.name)
+
     @property
     def first_name(self):
         """str: Player's first name"""
