@@ -22,6 +22,7 @@ class Location(Flyweight):
     y: int
     """int: Rink position in ft along y-axis (breadth) [-42, 42]"""
 
+    @classmethod
     def _key(cls, x, y, *args, **kwargs):
         return (x, y)
 

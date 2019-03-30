@@ -48,6 +48,7 @@ class Player(Flyweight):
     birth_country: str
     """str: Player's birth country"""
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 

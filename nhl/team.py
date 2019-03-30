@@ -45,6 +45,7 @@ class Team(Flyweight):
     franchise: Franchise
     """Franchise: """
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 

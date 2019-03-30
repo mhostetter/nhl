@@ -37,6 +37,7 @@ class Game(Flyweight):
     events: List
     """List: """
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 

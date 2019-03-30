@@ -22,6 +22,7 @@ class Gametime(Flyweight):
     period_s: int
     """int: Period elapsed seconds"""
 
+    @classmethod
     def _key(cls, period, period_s, *args, **kwargs):
         return (period, period_s)
 

@@ -28,6 +28,7 @@ class Conference(Flyweight):
     abbreviation: str
     """str: Conference abbreviation"""
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 

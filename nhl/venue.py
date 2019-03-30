@@ -22,6 +22,7 @@ class Venue(Flyweight):
     name: str
     """str: Venue name"""
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 

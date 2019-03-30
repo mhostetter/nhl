@@ -14,7 +14,7 @@ class Flyweight:
     __slots__ = []
 
     def __new__(cls, *args, **kwargs):
-        key = cls._key(cls, *args, **kwargs)
+        key = cls._key(*args, **kwargs)
         return cls._instances.setdefault(key, super(type(cls), cls).__new__(cls))
 
     def _key(cls, *args, **kwargs):

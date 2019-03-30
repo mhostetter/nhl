@@ -22,6 +22,7 @@ class Franchise(Flyweight):
     name: str
     """str: Franchise name"""
 
+    @classmethod
     def _key(cls, id, *args, **kwargs):
         return id
 
