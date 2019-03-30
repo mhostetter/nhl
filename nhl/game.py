@@ -15,6 +15,7 @@ class Game(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["id", "home", "away", "venue", "players", "events"]
     _instances = {}
 
@@ -59,3 +60,7 @@ class Game(Flyweight):
             key or `None` if key not found
         """
         return super().from_key(id)
+
+    def __repr__(self):
+        # return "<nhl.Game: {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.gameinfo.description, self.away.team.abbreviation, self.gameinfo.score[1], self.gameinfo.score[0], self.home.team.abbreviation, self.gameinfo.date, self.gameinfo.id)
+        return "<nhl.Game: {} at {}, ID {}>".format(self.away.abbreviation, self.home.abbreviation, self.id)

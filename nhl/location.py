@@ -12,6 +12,7 @@ class Location(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["x", "y"]
     _instances = {}
 
@@ -44,3 +45,6 @@ class Location(Flyweight):
             key or `None` if key not found
         """
         return super().from_key(x, y)
+
+    def __repr__(self):
+        return "<nhl.Location: {:0.1f}, {:0.1f}>".format(self.x, self.y)

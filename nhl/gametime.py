@@ -12,6 +12,7 @@ class Gametime(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["period", "period_s"]
     _instances = {}
 

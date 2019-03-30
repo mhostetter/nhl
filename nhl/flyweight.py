@@ -2,8 +2,8 @@ class Flyweight:
     """
     Flyweight parent class to implement Gang of Four flyweight design
     pattern. The flyweight will only create one instance of a given child
-    class based on the return of :py:meth:`_key()`. 
-    
+    class based on the return of :py:meth:`_key()`.
+
     :py:meth:`_key()` must be implemented by children. The return of :py:meth:`_key()`
     must be hashable.
 

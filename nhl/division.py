@@ -12,6 +12,7 @@ class Division(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["id", "name", "name_short", "abbreviation"]
     _instances = {}
 
@@ -50,3 +51,6 @@ class Division(Flyweight):
             key or `None` if key not found
         """
         return super().from_key(id)
+
+    def __repr__(self):
+        return "<nhl.Division: {} Division, ID {}>".format(self.name, self.id)

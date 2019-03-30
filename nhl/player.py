@@ -13,6 +13,7 @@ class Player(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["id", "name", "number", "position", "height", "weight",
         "shoots_catches", "birth_date", "birth_city", "birth_country"]
     _instances = {}
@@ -71,8 +72,8 @@ class Player(Flyweight):
         """
         return super().from_key(id)
 
-    # def __repr__(self):
-    #     return "<{}: {:>2} {:<2} {:<15}>".format(self.__class__.__name__, self.number, self.position, self.name)
+    def __repr__(self):
+        return "<nhl.Player: {:>2} {:<2} {:<20}, {}\'{:>2}\", {} lbs, ID {}>".format(self.number if self.number is not None else "", self.position, self.name, *self.height_ft_in, self.weight, self.id)
 
     @property
     def first_name(self):

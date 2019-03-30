@@ -12,6 +12,7 @@ class Franchise(Flyweight):
 
     This is the detailed docstring.
     """
+
     __slots__ = ["id", "name"]
     _instances = {}
 
@@ -44,3 +45,6 @@ class Franchise(Flyweight):
             key or `None` if key not found
         """
         return super().from_key(id)
+
+    def __repr__(self):
+        return "<nhl.Franchise: {}, ID {}>".format(self.name, self.id)
