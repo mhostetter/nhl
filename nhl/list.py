@@ -31,6 +31,16 @@ class List(list):
     """
     Searchable, sortable, and filter-able :class:`list` subclass
     """
+
+    def unique(self):
+        """
+        Reduce the list to unique elements.
+
+        Returns:
+            nhl.List: reduced list
+        """
+        return List(set(self))
+
     def select(self, attr, default=None):
         """
         Select a given attribute (or chain or attributes) from the objects within the
