@@ -2,6 +2,7 @@
 Module containing NHL location objects
 """
 from dataclasses import dataclass
+import math
 
 from .flyweight import Flyweight
 
@@ -48,4 +49,16 @@ class Location(Flyweight):
         return super().from_key(x, y)
 
     def __repr__(self):
-        return "<nhl.Location: {:0.1f}, {:0.1f}>".format(self.x, self.y)
+        return "<nhl.Location: {:3.0f}, {:3.0f}>".format(self.x, self.y)
+
+    def distance(self, other):
+        """
+        Measure distance between current location and another on-ice location.
+
+        Args:
+            other (Location): location to measure distance from
+
+        Returns:
+            float: distance (ft)
+        """
+        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
