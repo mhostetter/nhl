@@ -13,6 +13,7 @@ A python API for retrieving NHL game and player stats.
    $ pip3 install --user dataclasses  # Not needed for python3.7 and greater
    $ pip3 install --user requests
    $ pip3 install --user beautifulsoup4
+   $ pip3 install --user lxml
 ```
 
 ## Unit Testing
