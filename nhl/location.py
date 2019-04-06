@@ -29,23 +29,10 @@ class Location(Flyweight):
 
     @classmethod
     def has_key(cls, x, y):
-        """
-        Check whether flyweight object with specified key has already been created.
-
-        Returns:
-            bool: True if already created, False if not
-        """
         return super().has_key(x, y)
 
     @classmethod
     def from_key(cls, x, y):
-        """
-        Return flyweight object with specified key, if it has already been created.
-
-        Returns:
-            nhl.Location or None: Previously constructed flyweight object with given
-            key or `None` if key not found
-        """
         return super().from_key(x, y)
 
     def __repr__(self):

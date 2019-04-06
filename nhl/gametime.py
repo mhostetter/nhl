@@ -28,23 +28,10 @@ class Gametime(Flyweight):
 
     @classmethod
     def has_key(cls, period, period_s):
-        """
-        Check whether flyweight object with specified key has already been created.
-
-        Returns:
-            bool: True if already created, False if not
-        """
         return super().has_key(period, period_s)
 
     @classmethod
     def from_key(cls, period, period_s):
-        """
-        Return flyweight object with specified key, if it has already been created.
-
-        Returns:
-            nhl.Gametime or None: Previously constructed flyweight object with given
-            key or `None` if key not found
-        """
         return super().from_key(period, period_s)
 
     def __repr__(self):

@@ -11,6 +11,7 @@ class Flyweight:
     create special "namespaces" for instances to be tied to individual classes
     and not the :class:`Flyweight` parent class itself.
     """
+
     __slots__ = []
 
     def __new__(cls, *args, **kwargs):
@@ -18,18 +19,43 @@ class Flyweight:
         return cls._instances.setdefault(key, super(type(cls), cls).__new__(cls))
 
     def _key(cls, *args, **kwargs):
+        """
+        Obtain objects keys from the construction arguments. Called by `__new__()`.
+
+        Returns:
+            int or tuple: Object key
+        """
         raise NotImplementedError
 
     @classmethod
     def keys(cls):
+        """
+        Obtains the current flyweight keys for the given class.
+
+        Returns:
+            dict_keys: All keys for class `cls` currently created
+        """
         return cls._instances.keys()
 
     @classmethod
     def has_key(cls, *args):
+        """
+        Check whether flyweight object with specified key has already been created.
+
+        Returns:
+            bool: True if already created, False if not
+        """
         key = args if len(args) > 1 else args[0]
         return key in cls._instances.keys()
 
     @classmethod
     def from_key(cls, *args):
+        """
+        Return flyweight object with specified key, if it has already been created.
+
+        Returns:
+            cls or None: Previously constructed flyweight object with given
+            key or None if key not found
+        """
         key = args if len(args) > 1 else args[0]
         return cls._instances.get(key, None)
