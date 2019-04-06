@@ -5,6 +5,7 @@ from dataclasses import dataclass
 
 from .flyweight import Flyweight
 
+
 @dataclass(frozen=True)
 class Conference(Flyweight):
     """

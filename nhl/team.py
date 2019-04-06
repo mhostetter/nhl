@@ -9,6 +9,7 @@ from .division import Division
 from .flyweight import Flyweight
 from .franchise import Franchise
 
+
 @dataclass(frozen=True)
 class Team(Flyweight):
     """
@@ -17,8 +18,8 @@ class Team(Flyweight):
     This is the detailed docstring.
     """
 
-    __slots__ = ["id", "location", "name", "abbreviation", "first_year", "division", 
-        "conference", "franchise"]
+    __slots__ = ["id", "location", "name", "abbreviation", "first_year", "division",
+                 "conference", "franchise"]
     _instances = {}
 
     id: int

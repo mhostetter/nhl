@@ -6,6 +6,7 @@ import datetime
 
 from .flyweight import Flyweight
 
+
 @dataclass(frozen=True)
 class Player(Flyweight):
     """
@@ -15,7 +16,7 @@ class Player(Flyweight):
     """
 
     __slots__ = ["id", "name", "number", "position", "height", "weight",
-        "shoots_catches", "birth_date", "birth_city", "birth_country"]
+                 "shoots_catches", "birth_date", "birth_city", "birth_country"]
     _instances = {}
 
     id: int

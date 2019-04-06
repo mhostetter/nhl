@@ -18,6 +18,7 @@ class Flyweight:
         key = cls._key(*args, **kwargs)
         return cls._instances.setdefault(key, super(type(cls), cls).__new__(cls))
 
+    @classmethod
     def _key(cls, *args, **kwargs):
         """
         Obtain objects keys from the construction arguments. Called by `__new__()`.
@@ -46,7 +47,7 @@ class Flyweight:
             bool: True if already created, False if not
         """
         key = args if len(args) > 1 else args[0]
-        return key in cls._instances.keys()
+        return key in cls._instances
 
     @classmethod
     def from_key(cls, *args):

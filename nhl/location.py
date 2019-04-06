@@ -6,6 +6,7 @@ import math
 
 from .flyweight import Flyweight
 
+
 @dataclass(frozen=True)
 class Location(Flyweight):
     """
