@@ -7,13 +7,28 @@
 
 A python API for retrieving NHL game and player stats.
 
-## Dependencies
+## Install
+
+Install the latest released version via `pip`.
 
 ```bash
-   $ pip3 install --user dataclasses  # Not needed for python3.7 and greater
-   $ pip3 install --user requests
-   $ pip3 install --user beautifulsoup4
-   $ pip3 install --user lxml
+$ pip3 install nhl
+```
+
+Or you can install the latest pushed code via `git`.
+
+```bash
+$ git clone https://github.com/mhostetter/nhl
+$ pip3 install -e nhl/
+```
+
+### Dependencies
+
+```bash
+$ pip3 install --user dataclasses  # Not needed for python3.7 and greater
+$ pip3 install --user requests
+$ pip3 install --user beautifulsoup4
+$ pip3 install --user lxml
 ```
 
 ## Unit Testing
@@ -21,13 +36,13 @@ A python API for retrieving NHL game and player stats.
 Required dependencies:
 
 ```bash
-   $ pip3 install --user pytest
-   $ pip3 install --user pytest-cov
-   $ pip3 install --user requests-mock
+$ pip3 install --user pytest
+$ pip3 install --user pytest-cov
+$ pip3 install --user requests-mock
 ```
 
 Run tests:
 
 ```bash
-   $ pytest .
+$ pytest .
 ```
