@@ -24,15 +24,15 @@ def test_flyweight():
 def test_values():
     gametime = make_gametime()
     assert gametime.period == 3
-    assert gametime.period_s == 314
-    assert gametime.period_m_s == (5, 14)
+    assert gametime.period_sec == 314
+    assert gametime.period_min_sec == (5, 14)
     assert gametime.period_str == "3rd"
-    assert gametime.s == 2714
-    assert gametime.m_s == (45, 14)
+    assert gametime.sec == 2714
+    assert gametime.min_sec == (45, 14)
 
 def test_period_start_end():
     end_2nd = nhl.Gametime(2, 20*60)
     start_3rd = nhl.Gametime(3, 0*60)
     assert end_2nd is not start_3rd
-    assert end_2nd.s == start_3rd.s
-    assert end_2nd.m_s == start_3rd.m_s
+    assert end_2nd.sec == start_3rd.sec
+    assert end_2nd.min_sec == start_3rd.min_sec

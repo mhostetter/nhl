@@ -24,20 +24,44 @@ def test_flyweight():
 
 def test_values():
     game = make_game()
-    assert game.id == 2017030415
+    assert game.info.id == 2017030415
+    assert game.info.venue.id == 5178
     assert game.home.id == 54
     assert game.away.id == 15
-    assert game.venue.id == 5178
 
-    # Test event parsing
-    assert game.events[160].game_id == 2017030415
-    assert game.events[160].id == 160
-    assert game.events[160].type == "GOAL"
-    assert game.events[160].subtype == "SLAP_SHOT"
-    assert game.events[160].time == nhl.Gametime(2, 614)
-    assert game.events[160].location == nhl.Location(-82, -26)
-    assert game.events[160].team.id == 15
-    assert game.events[160].by[0].id == 8471214
-    assert game.events[160].by[1].id == 8473563
-    assert game.events[160].by[2].id == 8474590
-    assert game.events[160].on.id == 8470594
+    # Test event parsing for goal
+    event = game.events.filter("id", 1600)[0]
+    assert event.game_id == 2017030415
+    assert event.id == 1600
+    assert event.type == "GOAL"
+    assert event.subtype == "SLAP_SHOT"
+    assert event.gametime == nhl.Gametime(2, 614)
+    assert event.location == nhl.Location(82, 26)
+    assert event.by_team.id == 15
+    assert event.by_player.id == 8471214
+    assert event.on_player.id == 8470594
+
+    # Test event parsing for primary assist
+    event = game.events.filter("id", 1601)[0]
+    assert event.game_id == 2017030415
+    assert event.id == 1601
+    assert event.type == "ASSIST"
+    assert event.subtype == "PRIMARY"
+    assert event.gametime == nhl.Gametime(2, 614)
+    assert event.location == nhl.Location(82, 26)
+    assert event.by_team.id == 15
+    assert event.by_player.id == 8473563
+    assert event.on_player.id == 8470594
+
+    # Test event parsing for secondary assist
+    event = game.events.filter("id", 1602)[0]
+    assert event.game_id == 2017030415
+    assert event.id == 1602
+    assert event.type == "ASSIST"
+    assert event.subtype == "SECONDARY"
+    assert event.gametime == nhl.Gametime(2, 614)
+    assert event.location == nhl.Location(82, 26)
+    assert event.by_team.id == 15
+    assert event.by_player.id == 8474590
+    assert event.on_player.id == 8470594
+
