@@ -1,15 +1,23 @@
 import operator
 
 OPERATIONS = {
-    "=": operator.eq,
     "==": operator.eq,
+    "=": operator.eq,
+    "eq": operator.eq,
+    "!=": operator.ne,
+    "ne": operator.ne,
     ">": operator.gt,
+    "gt": operator.gt,
     ">=": operator.ge,
+    "ge": operator.ge,
     "<": operator.lt,
+    "lt": operator.lt,
     "<=": operator.le,
+    "le": operator.le,
     "in": operator.contains,
     "contains": operator.contains
 }
+
 
 def _select(item, attr, default=None):
     if len(attr.split(".")) > 1:
@@ -19,18 +27,24 @@ def _select(item, attr, default=None):
     else:
         return getattr(item, attr, default)
 
+
 def _filter(item, comparent, compare="=="):
-    if isinstance(item, str):
+    compare = compare.strip()
+    if isinstance(comparent, str):
         compare = "in"
         item = item.lower()
         comparent = comparent.lower()
     operation = OPERATIONS[compare]
     return operation(item, comparent)
 
+
 class List(list):
     """
     Searchable, sortable, and filter-able :class:`list` subclass
     """
+
+    def __add__(self, other):
+        return List(super().__add__(other))
 
     def unique(self):
         """
@@ -64,19 +78,31 @@ class List(list):
             attr (str): attributes to be compared (with initial `.` omitted)
             value (any): value to compare attr against
             compare (str): comparison type
-                "=": `attr == value`
-                "==": `attr == value`
-                ">": `attr > value`
-                ">=": `attr >= value`
-                "<": `attr < value`
-                "<=": `attr <= value`
-                "in": `value in attr`
-                "contains": `value in attr`
+                "==", "=", "eq": `attr == value`
+                "!=", "ne": `attr != value`
+                ">", "gt": `attr > value`
+                ">=", "ge": `attr >= value`
+                "<", "lt": `attr < value`
+                "<=", "le": `attr <= value`
+                "in", "contains": `value in attr`
 
         Returns:
             nhl.List: reduced list with items that satisfy filter criterion
         """
         return List([item for item in self if _filter(_select(item, attr), value, compare)])
+
+    def sort(self, key, reverse=False):
+        """
+        Sort the list by `key` either ascending or descending.
+
+        Args:
+            key (str): atrribute to sort by (with initial `.` omitted)
+            reverse (bool, optional): reverse the direction of sort to descending, (default False, ascending)
+
+        Returns:
+            nhl.List: sorted list
+        """
+        return List(sorted(self, key=lambda item: _select(item, key), reverse=reverse))
 
     @property
     def len(self):
