@@ -1,14 +1,26 @@
 Welcome to nhl's documentation!
 ===============================
 
-.. toctree::
-   :maxdepth: 2
+API
+---
 
-   examples
-   nhl
+.. autosummary::
+   :toctree: _autosummary
+
+    nhl
+    nhl.rink
+    nhl.statsapi
+
+Examples
+--------
+
+.. toctree::
+   :maxdepth: 1
+
+    example_1
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
