@@ -19,6 +19,7 @@ from ..shift import Shift
 from ..team import Team
 from ..venue import Venue
 
+
 def _fetch_shifts(game_id, side):
     season_id = game_id // 1000000
     lower_game_id = game_id % 1000000
@@ -29,19 +30,23 @@ def _fetch_shifts(game_id, side):
     print(result)
     return result.text
 
+
 def _parse_date(date_str):
     year = int(date_str.split("-")[0])
     month = int(date_str.split("-")[1])
     day = int(date_str.split("-")[2])
     return datetime.date(year, month, day)
 
+
 def _parse_height(height_str):
     feet = int(height_str.split("\' ")[0])
     inches = int(height_str.split("\' ")[1].split("\"")[0])
     return feet*12 + inches
 
+
 def _parse_gametime(period_time):
     return 60*int(period_time.split(":")[0]) + int(period_time.split(":")[1])
+
 
 def parse_conference(json):
     id = json["id"]
@@ -53,8 +58,10 @@ def parse_conference(json):
     abbreviation = json.get("abbreviation", name[0])
     return Conference(id, name, name_short, abbreviation)
 
+
 def parse_conferences(json):
     return List([parse_conference(j) for j in json])
+
 
 def parse_division(json):
     id = json["id"]
@@ -63,6 +70,7 @@ def parse_division(json):
     name_short = json["nameShort"]
     abbreviation = json["abbreviation"]
     return Division(id, name, name_short, abbreviation)
+
 
 def parse_events(json, info, home_score, away_score, home_shifts, away_shifts, flip_sides):
     id = json["about"]["eventIdx"]*10
@@ -181,11 +189,13 @@ def parse_events(json, info, home_score, away_score, home_shifts, away_shifts, f
     return events
     # return Event(game_id, id, type, subtype, gametime, location, value, score, by_player, with_players, on_player, by_team, on_team, by_players_on_ice, on_players_on_ice)
 
+
 def parse_franchise(json):
     id = json["franchiseId"]
     if Franchise.has_key(id): return Franchise.from_key(id)
     name = json["teamName"]
     return Franchise(id, name)
+
 
 def parse_game(json):
     id = json["gamePk"]
@@ -273,6 +283,7 @@ def parse_game(json):
 
     return Game(info, home_team, away_team, player_stats, events)
 
+
 def parse_location(json, gametime, flip_sides):
     if "x" in json:
         x = int(json["x"])
@@ -287,11 +298,13 @@ def parse_location(json, gametime, flip_sides):
     else:
         return None
 
+
 def parse_official(json):
     id = json["id"]
     if Official.has_key(id): return Official.from_key(id)
     name = json["fullName"]
     return Official(id, name)
+
 
 def parse_player(json):
     id = json["id"]
@@ -309,6 +322,7 @@ def parse_player(json):
     birth_country = json["birthCountry"]
     return Player(id, name, number, position, height, weight, shoots_catches,
         birth_date, birth_city, birth_country)
+
 
 def parse_shifts(game_id, team_id, player_id, player_number, html):
     shifts = List()
@@ -337,6 +351,7 @@ def parse_shifts(game_id, team_id, player_id, player_number, html):
                 break
     return shifts
 
+
 def parse_team(json):
     id = json["id"]
     if Team.has_key(id): return Team.from_key(id)
@@ -349,8 +364,10 @@ def parse_team(json):
     franchise = parse_franchise(json["franchise"])
     return Team(id, location, name, abbreviation, first_year, division, conference, franchise)
 
+
 def parse_teams(json):
     return List([parse_team(j) for j in json])
+
 
 def parse_venue(json):
     id = json["id"]

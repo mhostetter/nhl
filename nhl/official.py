@@ -48,7 +48,7 @@ class Official(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Official: {}, ID {}>".format(self.name, self.id)
+        return f"<nhl.Official: {self.name}, ID {self.id}>"
 
     @property
     def first_name(self):
