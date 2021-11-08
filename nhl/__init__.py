@@ -1,3 +1,5 @@
+from ._version import __version__
+
 from . import rink
 from . import statsapi
 
