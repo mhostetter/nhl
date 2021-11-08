@@ -57,7 +57,7 @@ def team(id):
 def teams(ids=None):
     if isinstance(ids, list):
         suffix = ",".join(map(str, ids))
-        json = requests.get(f"{BASE}/teams/?teamId={suffix}")).json()
+        json = requests.get(f"{BASE}/teams/?teamId={suffix}").json()
         return List(parse.parse_team(item) for item in json["teams"])
     else:
         json = requests.get(f"{BASE}/teams/").json()
