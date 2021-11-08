@@ -59,9 +59,9 @@ class Team(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Team: {}, {} Division, {} Conference, ID {}>".format(self.name, self.division.name, self.conference.name, self.id)
+        return f"<nhl.Team: {self.name}, {self.division.name} Division, {self.conference.name} Conference, ID {self.id}>"
 
     @property
     def full_name(self):
         """str: Team's full name"""
-        return "{} {}".format(self.location, self.name)
+        return f"{self.location} {self.name}"

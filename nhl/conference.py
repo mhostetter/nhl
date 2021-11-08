@@ -42,4 +42,4 @@ class Conference(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Conference: {}, ID {}>".format(self.name, self.id)
+        return f"<nhl.Conference: {self.name}, ID {self.id}>"

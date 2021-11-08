@@ -37,7 +37,7 @@ class Location(Flyweight):
         return super().from_key(x, y)
 
     def __repr__(self):
-        return "<nhl.Location: {:3.0f}, {:3.0f}>".format(self.x, self.y)
+        return f"<nhl.Location: {self.x:3.0f}, {self.y:3.0f}>"
 
     def distance(self, other):
         """

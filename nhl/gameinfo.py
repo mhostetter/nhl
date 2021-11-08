@@ -61,7 +61,7 @@ class GameInfo:
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.GameInfo: {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.description, self.away_team.abbreviation, self.score[1], self.score[0], self.home_team.abbreviation, self.date, self.id)
+        return f"<nhl.GameInfo: {self.description}, {self.away_team.abbreviation} ({self.score[1]}) at ({self.score[0]}) {self.home_team.abbreviation}, {self.date}, ID {self.id}>"
 
     @property
     def home_score(self):
@@ -99,13 +99,17 @@ class GameInfo:
             s = "RS"
         elif self.season_type == 3:
             if self.playoff_round in [1, 2]:
-                r = "R{}".format(self.playoff_round)
+                r = f"R{self.playoff_round}"
             elif self.playoff_round == 3:
                 r = "ECF" if self.playoff_series == 1 else " WCF"
             else:
                 r = "SCF"
-            s = "{} G{}".format(r, self.playoff_game)
-        return "{:04d}-{:02d} {}".format(self.season, self.season % 100 + 1, s)
+            s = f"{r} G{self.playoff_game}"
+
+        season_start = self.season
+        season_end = self.season % 100 + 1
+
+        return f"{season_start:04d}-{season_end:02d} {s}"
 
     @property
     def date(self):

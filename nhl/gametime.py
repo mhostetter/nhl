@@ -41,7 +41,8 @@ class Gametime(Flyweight):
         return super().from_key(period, period_sec)
 
     def __repr__(self):
-        return "<nhl.Gametime: {} {:02d}:{:02d}>".format(self.period_str, *self.period_min_sec)
+        minute, second = self.period_min_sec
+        return f"<nhl.Gametime: {self.period_str} {minute:02d}:{second:02d}>"
 
     @property
     def sec(self):
@@ -63,7 +64,7 @@ class Gametime(Flyweight):
         elif self.period == 3:
             return "3rd"
         else:
-            return "{}th".format(self.period)
+            return f"{self.period}th"
 
     @property
     def period_min_sec(self):

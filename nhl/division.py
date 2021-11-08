@@ -42,4 +42,4 @@ class Division(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Division: {} Division, ID {}>".format(self.name, self.id)
+        return f"<nhl.Division: {self.name} Division, ID {self.id}>"

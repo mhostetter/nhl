@@ -73,20 +73,27 @@ class Event(Flyweight):
 
     @property
     def subname(self):
-        return " ({}{})".format(self.subtype, ", {}".format(self.valuename) if self.value else "") if self.subtype else ""
+        if self.subtype:
+            value = f", {self.valuename}" if self.value else ""
+            return f" ({self.subtype}{value})"
+        else:
+            return ""
 
     @property
     def valuename(self):
         if self.type == "PENALTY":
-            return "{} min".format(self.value) if self.value else ""
+            return f"{self.value} min" if self.value else ""
         elif self.type in ["BLOCKED_SHOT", "MISSED_SHOT", "SHOT", "SAVE", "GOAL", "GOAL_AGAINST"]:
-            return "{:1.0f} ft".format(self.value) if self.value else ""
+            return f"{self.value:1.0f} ft" if self.value else ""
         else:
             return ""
 
     @property
     def lead(self):
-        return self.score[0] - self.score[1] if self.score[0] is not None else None
+        if self.score[0] is not None:
+            return self.score[0] - self.score[1]
+        else:
+            return None
 
     @property
     def by_strength(self):

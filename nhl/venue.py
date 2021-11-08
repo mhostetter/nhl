@@ -36,4 +36,4 @@ class Venue(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Venue: {}, ID {}>".format(self.name, self.id)
+        return f"<nhl.Venue: {self.name}, ID {self.id}>"
