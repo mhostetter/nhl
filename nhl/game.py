@@ -48,7 +48,7 @@ class Game(Flyweight):
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.Game: {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.info.description, self.away.abbreviation, self.info.score[1], self.info.score[0], self.home.abbreviation, self.info.date, self.info.id)
+        return "<nhl.Game: {}, {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.info.description, self.info.status.detailed_state, self.away.abbreviation, self.info.score[1], self.info.score[0], self.home.abbreviation, self.info.date, self.info.id)
         # return "<nhl.Game: {} at {}, ID {}>".format(self.away.abbreviation, self.home.abbreviation, self.id)
 
     @property

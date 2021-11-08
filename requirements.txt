@@ -1,3 +1,4 @@
 dataclasses
 ipykernel
 nbsphinx
+bs4

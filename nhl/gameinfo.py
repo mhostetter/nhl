@@ -5,6 +5,7 @@ from dataclasses import dataclass
 import datetime
 
 from .list import List
+from .gamestatus import GameStatus
 from .gametime import Gametime
 from .player import Player
 from .team import Team
@@ -18,12 +19,13 @@ class GameInfo:
     This is the detailed docstring.
     """
 
-    __slots__ = ["id", "season_id", "type", "start", "end", "venue", "home_team", "away_team", "score", "end_type", "end_time", "referees", "linesmen"]
+    __slots__ = ["id", "season_id", "type", "status", "start", "end", "venue", "home_team", "away_team", "score", "end_type", "end_time", "referees", "linesmen"]
     _instances = {}
 
     id: int
     season_id: int
     type: str
+    status: GameStatus
     start: datetime.datetime
     end: datetime.datetime
     venue: Venue
@@ -61,7 +63,7 @@ class GameInfo:
         return super().from_key(id)
 
     def __repr__(self):
-        return "<nhl.GameInfo: {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.description, self.away_team.abbreviation, self.score[1], self.score[0], self.home_team.abbreviation, self.date, self.id)
+        return "<nhl.GameInfo: {}, {}, {} ({}) at ({}) {}, {}, ID {}>".format(self.description, self.status.detailed_state, self.away_team.abbreviation, self.score[1], self.score[0], self.home_team.abbreviation, self.date, self.id)
 
     @property
     def home_score(self):

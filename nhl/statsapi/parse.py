@@ -8,6 +8,7 @@ from ..event import Event
 from ..franchise import Franchise
 from ..game import Game
 from ..gameinfo import GameInfo
+from ..gamestatus import GameStatus
 from ..gametime import Gametime
 from ..list import List
 from ..location import Location
@@ -15,6 +16,8 @@ from ..official import Official
 from ..player import Player
 from ..playerstats import PlayerStats
 from .. import rink
+from ..schedule import Schedule
+from ..season import Season
 from ..shift import Shift
 from ..team import Team
 from ..venue import Venue
@@ -60,8 +63,8 @@ def parse_division(json):
     id = json["id"]
     if Division.has_key(id): return Division.from_key(id)
     name = json["name"]
-    name_short = json["nameShort"]
-    abbreviation = json["abbreviation"]
+    name_short = json.get("nameShort", json["name"])
+    abbreviation = json.get("abbreviation", json["name"])
     return Division(id, name, name_short, abbreviation)
 
 def parse_events(json, info, home_score, away_score, home_shifts, away_shifts, flip_sides):
@@ -74,7 +77,7 @@ def parse_events(json, info, home_score, away_score, home_shifts, away_shifts, f
         type = "STOPPAGE"
         subtype = json["result"]["description"]
     elif type in ["MISSED_SHOT"]:
-        subtype = json["result"]["description"].split(" - ")[1].upper()
+        subtype = json["result"]["description"].upper()
     elif type in ["SHOT", "GOAL"]:
         subtype = json["result"]["secondaryType"].upper()
     else:
@@ -196,7 +199,8 @@ def parse_game(json):
     elif game_type == "R": game_type = "REGULAR_SEASON"
     elif game_type == "P": game_type = "PLAYOFF"
     start_datetime = json["gameData"]["datetime"]["dateTime"]
-    end_datetime = json["gameData"]["datetime"]["endDateTime"]
+    end_datetime = json["gameData"]["datetime"].get("endDateTime")
+    game_status = parse_game_status(json["gameData"]["status"])
 
     venue = parse_venue(json["gameData"]["venue"])
 
@@ -222,7 +226,7 @@ def parse_game(json):
             end_type = j["about"]["periodType"]
             end_gametime = Gametime(j["about"]["period"], _parse_gametime(j["about"]["periodTime"]))
 
-    info = GameInfo(id, season_id, game_type, start_datetime, end_datetime, venue, home_team, away_team, (home_score, away_score), end_type, end_gametime, referees, linesmen)
+    info = GameInfo(id, season_id, game_type, game_status, start_datetime, end_datetime, venue, home_team, away_team, (home_score, away_score), end_type, end_gametime, referees, linesmen)
 
     home_coach = json["liveData"]["boxscore"]["teams"]["home"]["coaches"][0]["person"]["fullName"] if len(json["liveData"]["boxscore"]["teams"]["home"]["coaches"]) >= 1 else None
     away_coach = json["liveData"]["boxscore"]["teams"]["away"]["coaches"][0]["person"]["fullName"] if len(json["liveData"]["boxscore"]["teams"]["away"]["coaches"]) >= 1 else None
@@ -273,6 +277,40 @@ def parse_game(json):
 
     return Game(info, home_team, away_team, player_stats, events)
 
+def parse_game_info_from_schedule(json):
+    id = json["gamePk"]
+    season_id = json["season"]
+    game_type = json["gameType"]
+    if game_type == "PR": game_type = "PRE_SEASON"
+    elif game_type == "R": game_type = "REGULAR_SEASON"
+    elif game_type == "P": game_type = "PLAYOFF"
+    start_datetime = json["gameDate"]
+    end_datetime = None
+    game_status = parse_game_status(json["status"])
+
+    venue = parse_venue(json["venue"])
+
+    home_team = parse_team(json["teams"]["home"]["team"])
+    away_team = parse_team(json["teams"]["away"]["team"])
+
+    home_score = json["teams"]["home"]["score"]
+    away_score = json["teams"]["away"]["score"]
+
+    referees = List()
+    linesmen = List()
+    end_type = None
+    end_gametime = None
+    
+    return GameInfo(id, season_id, game_type, game_status, start_datetime, end_datetime, venue, home_team, away_team, (home_score, away_score), end_type, end_gametime, referees, linesmen)
+
+def parse_game_status(json):
+    return GameStatus(
+        json["statusCode"],
+        json["abstractGameState"],
+        json["detailedState"],
+        json["startTimeTBD"],
+    )
+
 def parse_location(json, gametime, flip_sides):
     if "x" in json:
         x = int(json["x"])
@@ -305,10 +343,30 @@ def parse_player(json):
     weight = json["weight"]
     shoots_catches = json["shootsCatches"]
     birth_date = _parse_date(json["birthDate"])
-    birth_city = json["birthCity"]
-    birth_country = json["birthCountry"]
+    birth_city = json.get("birthCity")
+    birth_country = json.get("birthCountry")
     return Player(id, name, number, position, height, weight, shoots_catches,
         birth_date, birth_city, birth_country)
+
+def parse_schedule(json):
+    schedule_date = json["date"]
+    games = List(parse_game_info_from_schedule(x) for x in json["games"])
+    return Schedule(schedule_date, games)
+
+def parse_season(json):
+    return Season(
+        json["seasonId"],
+        f"{str(json['seasonId'])[:4]}-{str(json['seasonId'])[4:]}",
+        datetime.datetime.strptime(json["regularSeasonStartDate"], "%Y-%m-%d"),
+        datetime.datetime.strptime(json["regularSeasonEndDate"], "%Y-%m-%d"),
+        datetime.datetime.strptime(json["seasonEndDate"], "%Y-%m-%d"),
+        json["numberOfGames"],
+        json["tiesInUse"],
+        json["olympicsParticipation"],
+        json["conferencesInUse"],
+        json["divisionsInUse"],
+        json["wildCardInUse"],
+    )
 
 def parse_shifts(game_id, team_id, player_id, player_number, html):
     shifts = List()
@@ -326,7 +384,7 @@ def parse_shifts(game_id, team_id, player_id, player_number, html):
                 team = Team.from_key(team_id)
                 player = Player.from_key(player_id)
                 shift_id = int(cells[0].get_text()) - 1
-                period = int(cells[1].get_text())
+                period = 4 if cells[1].get_text() == "OT" else int(cells[1].get_text())
                 on_period_mmss = cells[2].get_text().split(" /")[0]
                 off_period_mmss = cells[3].get_text().split(" /")[0]
                 on = Gametime(period, _parse_gametime(on_period_mmss))
@@ -353,7 +411,7 @@ def parse_teams(json):
     return List([parse_team(j) for j in json])
 
 def parse_venue(json):
-    id = json["id"]
+    id = json.get("id", None)
     if Venue.has_key(id): return Venue.from_key(id)
     name = json["name"]
     return Venue(id, name)
