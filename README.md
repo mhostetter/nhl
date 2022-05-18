@@ -1,11 +1,13 @@
 # nhl
 
 [![PyPI version](https://badge.fury.io/py/nhl.svg)](https://badge.fury.io/py/nhl)
-[![Documentation Status](https://readthedocs.org/projects/nhl/badge/?version=latest)](https://nhl.readthedocs.io/en/latest/?badge=latest)
-[![Build Status](https://travis-ci.org/mhostetter/nhl.svg?branch=master)](https://travis-ci.org/mhostetter/nhl)
-[![Codecov](https://codecov.io/gh/mhostetter/nhl/branch/master/graph/badge.svg)](https://codecov.io/gh/mhostetter/nhl)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/nhl)](https://pypistats.org/packages/nhl)
+[![Read the Docs](https://img.shields.io/readthedocs/nhl)](https://nhl.readthedocs.io/en/latest/)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mhostetter/nhl/Test)](https://github.com/mhostetter/nhl/actions)
+[![Codecov](https://img.shields.io/codecov/c/github/mhostetter/nhl)](https://codecov.io/gh/mhostetter/nhl)
+[![Twitter](https://img.shields.io/twitter/follow/nhl_py?label=nhl_py&style=flat&logo=twitter)](https://twitter.com/nhl_py)
 
-A python API for retrieving NHL game and player stats.
+A Python 3 API for NHL game and player stats
 
 ## Install
 
