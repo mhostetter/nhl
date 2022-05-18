@@ -12,20 +12,20 @@ def test_fail_no_args():
         nhl.Player()
 
 
-def test_frozen(http_mock):
+def test_frozen(mock_people):
     player = nhl.statsapi.player(8471214)
     with pytest.raises(dataclasses.FrozenInstanceError):
         player.id = 2
 
 
-# def test_flyweight(http_mock):
+# def test_flyweight(mock_people):
 #     player_1 = nhl.statsapi.player(8471214)
 #     player_2 = nhl.statsapi.player(8471214)
 #     assert player_1 is player_2
 #     assert player_1 == player_2
 
 
-def test_fetch_and_parse(http_mock):
+def test_fetch_and_parse(mock_people):
     player = nhl.statsapi.player(8471214)
     assert player.id == 8471214
     assert player.name == "Alex Ovechkin"
