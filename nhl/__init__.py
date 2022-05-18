@@ -19,5 +19,5 @@ from ._official import Official
 from ._player import Player
 # from .playerstats import PlayerStats
 # from .shift import Shift
-# from .team import Team
+from ._team import Team
 # from .venue import Venue
