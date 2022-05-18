@@ -1,0 +1,284 @@
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
+  "franchises" : [ {
+    "franchiseId" : 1,
+    "firstSeasonId" : 19171918,
+    "mostRecentTeamId" : 8,
+    "teamName" : "Canadiens",
+    "locationName" : "Montréal",
+    "link" : "/api/v1/franchises/1"
+  }, {
+    "franchiseId" : 2,
+    "firstSeasonId" : 19171918,
+    "lastSeasonId" : 19171918,
+    "mostRecentTeamId" : 41,
+    "teamName" : "Wanderers",
+    "locationName" : "Montreal",
+    "link" : "/api/v1/franchises/2"
+  }, {
+    "franchiseId" : 3,
+    "firstSeasonId" : 19171918,
+    "lastSeasonId" : 19341935,
+    "mostRecentTeamId" : 45,
+    "teamName" : "Eagles",
+    "locationName" : "St. Louis",
+    "link" : "/api/v1/franchises/3"
+  }, {
+    "franchiseId" : 4,
+    "firstSeasonId" : 19191920,
+    "lastSeasonId" : 19241925,
+    "mostRecentTeamId" : 37,
+    "teamName" : "Tigers",
+    "locationName" : "Hamilton",
+    "link" : "/api/v1/franchises/4"
+  }, {
+    "franchiseId" : 5,
+    "firstSeasonId" : 19171918,
+    "mostRecentTeamId" : 10,
+    "teamName" : "Maple Leafs",
+    "locationName" : "Toronto",
+    "link" : "/api/v1/franchises/5"
+  }, {
+    "franchiseId" : 6,
+    "firstSeasonId" : 19241925,
+    "mostRecentTeamId" : 6,
+    "teamName" : "Bruins",
+    "locationName" : "Boston",
+    "link" : "/api/v1/franchises/6"
+  }, {
+    "franchiseId" : 7,
+    "firstSeasonId" : 19241925,
+    "lastSeasonId" : 19371938,
+    "mostRecentTeamId" : 43,
+    "teamName" : "Maroons",
+    "locationName" : "Montreal",
+    "link" : "/api/v1/franchises/7"
+  }, {
+    "franchiseId" : 8,
+    "firstSeasonId" : 19251926,
+    "lastSeasonId" : 19411942,
+    "mostRecentTeamId" : 51,
+    "teamName" : "Americans",
+    "locationName" : "Brooklyn",
+    "link" : "/api/v1/franchises/8"
+  }, {
+    "franchiseId" : 9,
+    "firstSeasonId" : 19251926,
+    "lastSeasonId" : 19301931,
+    "mostRecentTeamId" : 39,
+    "teamName" : "Quakers",
+    "locationName" : "Philadelphia",
+    "link" : "/api/v1/franchises/9"
+  }, {
+    "franchiseId" : 10,
+    "firstSeasonId" : 19261927,
+    "mostRecentTeamId" : 3,
+    "teamName" : "Rangers",
+    "locationName" : "New York",
+    "link" : "/api/v1/franchises/10"
+  }, {
+    "franchiseId" : 11,
+    "firstSeasonId" : 19261927,
+    "mostRecentTeamId" : 16,
+    "teamName" : "Blackhawks",
+    "locationName" : "Chicago",
+    "link" : "/api/v1/franchises/11"
+  }, {
+    "franchiseId" : 12,
+    "firstSeasonId" : 19261927,
+    "mostRecentTeamId" : 17,
+    "teamName" : "Red Wings",
+    "locationName" : "Detroit",
+    "link" : "/api/v1/franchises/12"
+  }, {
+    "franchiseId" : 13,
+    "firstSeasonId" : 19671968,
+    "lastSeasonId" : 19771978,
+    "mostRecentTeamId" : 49,
+    "teamName" : "Barons",
+    "locationName" : "Cleveland",
+    "link" : "/api/v1/franchises/13"
+  }, {
+    "franchiseId" : 14,
+    "firstSeasonId" : 19671968,
+    "mostRecentTeamId" : 26,
+    "teamName" : "Kings",
+    "locationName" : "Los Angeles",
+    "link" : "/api/v1/franchises/14"
+  }, {
+    "franchiseId" : 15,
+    "firstSeasonId" : 19671968,
+    "mostRecentTeamId" : 25,
+    "teamName" : "Stars",
+    "locationName" : "Dallas",
+    "link" : "/api/v1/franchises/15"
+  }, {
+    "franchiseId" : 16,
+    "firstSeasonId" : 19671968,
+    "mostRecentTeamId" : 4,
+    "teamName" : "Flyers",
+    "locationName" : "Philadelphia",
+    "link" : "/api/v1/franchises/16"
+  }, {
+    "franchiseId" : 17,
+    "firstSeasonId" : 19671968,
+    "mostRecentTeamId" : 5,
+    "teamName" : "Penguins",
+    "locationName" : "Pittsburgh",
+    "link" : "/api/v1/franchises/17"
+  }, {
+    "franchiseId" : 18,
+    "firstSeasonId" : 19671968,
+    "mostRecentTeamId" : 19,
+    "teamName" : "Blues",
+    "locationName" : "St. Louis",
+    "link" : "/api/v1/franchises/18"
+  }, {
+    "franchiseId" : 19,
+    "firstSeasonId" : 19701971,
+    "mostRecentTeamId" : 7,
+    "teamName" : "Sabres",
+    "locationName" : "Buffalo",
+    "link" : "/api/v1/franchises/19"
+  }, {
+    "franchiseId" : 20,
+    "firstSeasonId" : 19701971,
+    "mostRecentTeamId" : 23,
+    "teamName" : "Canucks",
+    "locationName" : "Vancouver",
+    "link" : "/api/v1/franchises/20"
+  }, {
+    "franchiseId" : 21,
+    "firstSeasonId" : 19721973,
+    "mostRecentTeamId" : 20,
+    "teamName" : "Flames",
+    "locationName" : "Calgary",
+    "link" : "/api/v1/franchises/21"
+  }, {
+    "franchiseId" : 22,
+    "firstSeasonId" : 19721973,
+    "mostRecentTeamId" : 2,
+    "teamName" : "Islanders",
+    "locationName" : "New York",
+    "link" : "/api/v1/franchises/22"
+  }, {
+    "franchiseId" : 23,
+    "firstSeasonId" : 19741975,
+    "mostRecentTeamId" : 1,
+    "teamName" : "Devils",
+    "locationName" : "New Jersey",
+    "link" : "/api/v1/franchises/23"
+  }, {
+    "franchiseId" : 24,
+    "firstSeasonId" : 19741975,
+    "mostRecentTeamId" : 15,
+    "teamName" : "Capitals",
+    "locationName" : "Washington",
+    "link" : "/api/v1/franchises/24"
+  }, {
+    "franchiseId" : 25,
+    "firstSeasonId" : 19791980,
+    "mostRecentTeamId" : 22,
+    "teamName" : "Oilers",
+    "locationName" : "Edmonton",
+    "link" : "/api/v1/franchises/25"
+  }, {
+    "franchiseId" : 26,
+    "firstSeasonId" : 19791980,
+    "mostRecentTeamId" : 12,
+    "teamName" : "Hurricanes",
+    "locationName" : "Carolina",
+    "link" : "/api/v1/franchises/26"
+  }, {
+    "franchiseId" : 27,
+    "firstSeasonId" : 19791980,
+    "mostRecentTeamId" : 21,
+    "teamName" : "Avalanche",
+    "locationName" : "Colorado",
+    "link" : "/api/v1/franchises/27"
+  }, {
+    "franchiseId" : 28,
+    "firstSeasonId" : 19791980,
+    "mostRecentTeamId" : 53,
+    "teamName" : "Coyotes",
+    "locationName" : "Arizona",
+    "link" : "/api/v1/franchises/28"
+  }, {
+    "franchiseId" : 29,
+    "firstSeasonId" : 19911992,
+    "mostRecentTeamId" : 28,
+    "teamName" : "Sharks",
+    "locationName" : "San Jose",
+    "link" : "/api/v1/franchises/29"
+  }, {
+    "franchiseId" : 30,
+    "firstSeasonId" : 19921993,
+    "mostRecentTeamId" : 9,
+    "teamName" : "Senators",
+    "locationName" : "Ottawa",
+    "link" : "/api/v1/franchises/30"
+  }, {
+    "franchiseId" : 31,
+    "firstSeasonId" : 19921993,
+    "mostRecentTeamId" : 14,
+    "teamName" : "Lightning",
+    "locationName" : "Tampa Bay",
+    "link" : "/api/v1/franchises/31"
+  }, {
+    "franchiseId" : 32,
+    "firstSeasonId" : 19931994,
+    "mostRecentTeamId" : 24,
+    "teamName" : "Ducks",
+    "locationName" : "Anaheim",
+    "link" : "/api/v1/franchises/32"
+  }, {
+    "franchiseId" : 33,
+    "firstSeasonId" : 19931994,
+    "mostRecentTeamId" : 13,
+    "teamName" : "Panthers",
+    "locationName" : "Florida",
+    "link" : "/api/v1/franchises/33"
+  }, {
+    "franchiseId" : 34,
+    "firstSeasonId" : 19981999,
+    "mostRecentTeamId" : 18,
+    "teamName" : "Predators",
+    "locationName" : "Nashville",
+    "link" : "/api/v1/franchises/34"
+  }, {
+    "franchiseId" : 35,
+    "firstSeasonId" : 19992000,
+    "mostRecentTeamId" : 52,
+    "teamName" : "Jets",
+    "locationName" : "Winnipeg",
+    "link" : "/api/v1/franchises/35"
+  }, {
+    "franchiseId" : 36,
+    "firstSeasonId" : 20002001,
+    "mostRecentTeamId" : 29,
+    "teamName" : "Blue Jackets",
+    "locationName" : "Columbus",
+    "link" : "/api/v1/franchises/36"
+  }, {
+    "franchiseId" : 37,
+    "firstSeasonId" : 20002001,
+    "mostRecentTeamId" : 30,
+    "teamName" : "Wild",
+    "locationName" : "Minnesota",
+    "link" : "/api/v1/franchises/37"
+  }, {
+    "franchiseId" : 38,
+    "firstSeasonId" : 20172018,
+    "mostRecentTeamId" : 54,
+    "teamName" : "Golden Knights",
+    "locationName" : "Vegas",
+    "link" : "/api/v1/franchises/38"
+  }, {
+    "franchiseId" : 39,
+    "firstSeasonId" : 20212022,
+    "mostRecentTeamId" : 55,
+    "teamName" : "Kraken",
+    "locationName" : "Seattle",
+    "link" : "/api/v1/franchises/39"
+  } ]
+}
