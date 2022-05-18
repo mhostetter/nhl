@@ -16,7 +16,7 @@ from ._franchise import Franchise
 # from .list import List
 # from .location import Location
 # from .official import Official
-# from .player import Player
+from ._player import Player
 # from .playerstats import PlayerStats
 # from .shift import Shift
 # from .team import Team
