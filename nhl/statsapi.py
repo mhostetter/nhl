@@ -6,3 +6,4 @@ from ._conference import conference, conferences
 from ._division import division, divisions
 from ._franchise import franchise, franchises
 from ._player import player, players
+from ._team import team, teams
