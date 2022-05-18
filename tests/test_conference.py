@@ -12,20 +12,20 @@ def test_fail_no_args():
         nhl.Conference()
 
 
-def test_frozen():
+def test_frozen(http_mock):
     conference = nhl.statsapi.conference(6)
     with pytest.raises(dataclasses.FrozenInstanceError):
         conference.id = 2
 
 
-# def test_flyweight():
+# def test_flyweight(http_mock):
 #     conference_1 = nhl.statsapi.conference(6)
 #     conference_2 = nhl.statsapi.conference(6)
 #     assert conference_1 is conference_2
 #     assert conference_1 == conference_2
 
 
-def test_fetch_and_parse():
+def test_fetch_and_parse(http_mock):
     conference = nhl.statsapi.conference(6)
     assert conference.id == 6
     assert conference.name == "Eastern"
