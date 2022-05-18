@@ -6,10 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List, Dict
 
-import requests
-
+from ._api import fetch
 from ._overrides import set_module
-from ._url import BASE
 
 
 def parse(json: Dict) -> Division:
@@ -42,7 +40,7 @@ def division(id: int) -> Division:
     :
         A :obj:`~nhl.Division` object.
     """
-    json = requests.get(f"{BASE}/divisions/{id}").json()
+    json = fetch(f"divisions/{id}")
     return parse(json["divisions"][0])
 
 
@@ -56,7 +54,7 @@ def divisions() -> List[Division]:
     :
         A list of :obj:`~nhl.Division` objects.
     """
-    json = requests.get(f"{BASE}/divisions/").json()
+    json = fetch("divisions/")
     return list(parse(item) for item in json["divisions"])
 
 

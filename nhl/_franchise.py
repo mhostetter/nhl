@@ -6,10 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List, Dict
 
-import requests
-
+from ._api import fetch
 from ._overrides import set_module
-from ._url import BASE
 
 
 def parse(json: Dict) -> Franchise:
@@ -40,7 +38,7 @@ def franchise(id: int) -> Franchise:
     :
         A :obj:`~nhl.Franchise` object.
     """
-    json = requests.get(f"{BASE}/franchises/{id}").json()
+    json = fetch(f"franchises/{id}")
     return parse(json["franchises"][0])
 
 
@@ -54,7 +52,7 @@ def franchises() -> List[Franchise]:
     :
         A list of :obj:`~nhl.Franchise` objects.
     """
-    json = requests.get(f"{BASE}/franchises/").json()
+    json = fetch("franchises/")
     return list(parse(item) for item in json["franchises"])
 
 
