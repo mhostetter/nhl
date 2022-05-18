@@ -183,6 +183,7 @@ html_domain_indices = True
 object_description_options = [
     ("py:function", dict(include_fields_in_toc=False)),
     ("py:method", dict(include_fields_in_toc=False)),
+    ("py:attribute", dict(include_fields_in_toc=False)),
 ]
 
 
