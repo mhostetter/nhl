@@ -5,3 +5,4 @@ A module containing functions for querying the NHL statsapi REST API https://sta
 from ._conference import conference, conferences
 from ._division import division, divisions
 from ._franchise import franchise, franchises
+from ._player import player, players
