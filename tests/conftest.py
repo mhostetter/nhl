@@ -14,10 +14,10 @@ def http_mock(requests_mock):
         requests_mock.get("http://statsapi.web.nhl.com/api/v1/conferences/6", text=text)
         requests_mock.get("https://statsapi.web.nhl.com/api/v1/conferences/6", text=text)
 
-    # with open(os.path.join(directory, "data/division_18.json")) as f:
-    #     text = f.read()
-    #     requests_mock.get("http://statsapi.web.nhl.com/api/v1/divisions/18", text=text)
-    #     requests_mock.get("https://statsapi.web.nhl.com/api/v1/divisions/18", text=text)
+    with open(os.path.join(directory, "data/divisions_18.json")) as f:
+        text = f.read()
+        requests_mock.get("http://statsapi.web.nhl.com/api/v1/divisions/18", text=text)
+        requests_mock.get("https://statsapi.web.nhl.com/api/v1/divisions/18", text=text)
 
     # with open(os.path.join(directory, "data/franchise_24.json")) as f:
     #     text = f.read()

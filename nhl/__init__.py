@@ -7,7 +7,7 @@ from ._version import __version__
 from . import statsapi
 
 from ._conference import Conference
-# from ._division import Division
+from ._division import Division
 # from .event import Event
 # from .franchise import Franchise
 # from .game import Game

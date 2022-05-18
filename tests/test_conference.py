@@ -25,7 +25,7 @@ def test_frozen():
 #     assert conference_1 == conference_2
 
 
-def test_values():
+def test_fetch_and_parse():
     conference = nhl.statsapi.conference(6)
     assert conference.id == 6
     assert conference.name == "Eastern"
