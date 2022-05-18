@@ -1,5 +1,5 @@
 {
-  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2019. All Rights Reserved.",
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
   "teams" : [ {
     "id" : 15,
     "name" : "Washington Capitals",
@@ -11,8 +11,8 @@
       "city" : "Washington",
       "timeZone" : {
         "id" : "America/New_York",
-        "offset" : -5,
-        "tz" : "EST"
+        "offset" : -4,
+        "tz" : "EDT"
       }
     },
     "abbreviation" : "WSH",
