@@ -32,6 +32,11 @@ def mock_divisions(requests_mock):
 
 @pytest.fixture
 def mock_franchises(requests_mock):
+    with open(os.path.join(DIRECTORY, "data/franchises.json"), encoding="utf-8") as f:
+        text = f.read()
+        requests_mock.get("http://statsapi.web.nhl.com/api/v1/franchises/", text=text)
+        requests_mock.get("https://statsapi.web.nhl.com/api/v1/franchises/", text=text)
+
     with open(os.path.join(DIRECTORY, "data/franchises_24.json"), encoding="utf-8") as f:
         text = f.read()
         requests_mock.get("http://statsapi.web.nhl.com/api/v1/franchises/24", text=text)
