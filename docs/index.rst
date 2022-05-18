@@ -1,27 +1,23 @@
-Welcome to nhl's documentation!
-===============================
+nhl
+===
 
-API
----
-
-.. autosummary::
-   :toctree: _autosummary
-
-    nhl
-    nhl.rink
-    nhl.statsapi
-
-Examples
---------
+The :obj:`nhl` library is a Python 3 package for NHL game and player stats.
 
 .. toctree::
-   :maxdepth: 1
+   :caption: API Reference
+   :hidden:
+   :maxdepth: 2
 
-    example_1
+   api/nhl.rst
 
-Indices and tables
-------------------
+.. toctree::
+   :caption: Release Notes
+   :hidden:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   release-notes/versioning.rst
+
+.. toctree::
+   :caption: Index
+   :hidden:
+
+   genindex

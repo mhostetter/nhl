@@ -1,6 +1,0 @@
-sphinx>=2
-recommonmark>=0.5
-sphinx_rtd_theme>=0.5
-readthedocs-sphinx-ext>=1.1
-ipykernel
-nbsphinx
