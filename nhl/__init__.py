@@ -20,4 +20,4 @@ from ._player import Player
 # from .playerstats import PlayerStats
 # from .shift import Shift
 from ._team import Team
-# from .venue import Venue
+from ._venue import Venue
