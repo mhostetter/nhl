@@ -153,10 +153,10 @@ html_theme_options = {
             },
         },
     ],
-    # "analytics": {
-    #     "provider": "google",
-    #     "property": "G-XXXXXXXXXX"
-    # },
+    "analytics": {
+        "provider": "google",
+        "property": "G-ED0K3LYHN7"
+    },
     # "font": {
     #     "code": "Ubuntu Mono"
     # },
