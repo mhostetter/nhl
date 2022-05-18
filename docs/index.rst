@@ -9,6 +9,7 @@ The :obj:`nhl` library is a Python 3 package for NHL game and player stats.
    :maxdepth: 2
 
    api/nhl.rst
+   api/nhl.statsapi.rst
 
 .. toctree::
    :caption: Release Notes
