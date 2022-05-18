@@ -6,10 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List, Dict
 
-import requests
-
+from ._api import fetch
 from ._overrides import set_module
-from ._url import BASE
 
 
 def parse(json: Dict) -> Conference:
@@ -44,7 +42,7 @@ def conference(id: int) -> Conference:
     :
         A :obj:`~nhl.Conference` object.
     """
-    json = requests.get(f"{BASE}/conferences/{id}").json()
+    json = fetch(f"conferences/{id}")
     return parse(json["conferences"][0])
 
 
@@ -58,7 +56,7 @@ def conferences() -> List[Conference]:
     :
         A list of :obj:`~nhl.Conference` objects.
     """
-    json = requests.get(f"{BASE}/conferences/").json()
+    json = fetch("conferences/")
     return list(parse(item) for item in json["conferences"])
 
 
