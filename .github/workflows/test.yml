@@ -10,26 +10,26 @@ on: push
 #     - master
 
 jobs:
-  # lint:
-  #   name: Lint
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       python-version: [3.7, 3.8, 3.9]
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Set up Python ${{ matrix.python-version }}
-  #     uses: actions/setup-python@v2
-  #     with:
-  #       python-version: ${{ matrix.python-version }}
-  #   - name: Install linting dependencies
-  #     run: |
-  #       python3 -m pip install --upgrade pip
-  #       python3 -m pip install -r requirements-dev.txt
-  #   - name: Install python package
-  #     run: python3 -m pip install .  # Needed to guarantee dependencies are installed
-  #   - name: Lint with pylint
-  #     run: python3 -m pylint --rcfile=setup.cfg nhl/
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install linting dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements-dev.txt
+    - name: Install python package
+      run: python3 -m pip install .  # Needed to guarantee dependencies are installed
+    - name: Lint with pylint
+      run: python3 -m pylint --rcfile=setup.cfg nhl/
 
   test-coverage:
     name: Coverage
