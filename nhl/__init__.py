@@ -12,7 +12,7 @@ from ._division import Division
 from ._franchise import Franchise
 # from .game import Game
 # from .gameinfo import GameInfo
-# from .gametime import Gametime
+from ._gametime import GameTime
 # from .list import List
 # from .location import Location
 from ._official import Official
