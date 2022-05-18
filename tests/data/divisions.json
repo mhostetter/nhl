@@ -1,0 +1,52 @@
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
+  "divisions" : [ {
+    "id" : 17,
+    "name" : "Atlantic",
+    "nameShort" : "ATL",
+    "link" : "/api/v1/divisions/17",
+    "abbreviation" : "A",
+    "conference" : {
+      "id" : 6,
+      "name" : "Eastern",
+      "link" : "/api/v1/conferences/6"
+    },
+    "active" : true
+  }, {
+    "id" : 16,
+    "name" : "Central",
+    "nameShort" : "CEN",
+    "link" : "/api/v1/divisions/16",
+    "abbreviation" : "C",
+    "conference" : {
+      "id" : 5,
+      "name" : "Western",
+      "link" : "/api/v1/conferences/5"
+    },
+    "active" : true
+  }, {
+    "id" : 18,
+    "name" : "Metropolitan",
+    "nameShort" : "Metro",
+    "link" : "/api/v1/divisions/18",
+    "abbreviation" : "M",
+    "conference" : {
+      "id" : 6,
+      "name" : "Eastern",
+      "link" : "/api/v1/conferences/6"
+    },
+    "active" : true
+  }, {
+    "id" : 15,
+    "name" : "Pacific",
+    "nameShort" : "PAC",
+    "link" : "/api/v1/divisions/15",
+    "abbreviation" : "P",
+    "conference" : {
+      "id" : 5,
+      "name" : "Western",
+      "link" : "/api/v1/conferences/5"
+    },
+    "active" : true
+  } ]
+}
