@@ -44,7 +44,12 @@ def http_mock(requests_mock):
         requests_mock.get("http://statsapi.web.nhl.com/api/v1/teams/15", text=text)
         requests_mock.get("https://statsapi.web.nhl.com/api/v1/teams/15", text=text)
 
-    # with open(os.path.join(DIRECTORY, "data/venue_5094.json"), encoding="utf-8") as f:
-    #     text = f.read()
-    #     requests_mock.get("http://statsapi.web.nhl.com/api/v1/venues/5094", text=text)
-    #     requests_mock.get("https://statsapi.web.nhl.com/api/v1/venues/5094", text=text)
+    with open(os.path.join(DIRECTORY, "data/venues.json"), encoding="utf-8") as f:
+        text = f.read()
+        requests_mock.get("http://statsapi.web.nhl.com/api/v1/venues/", text=text)
+        requests_mock.get("https://statsapi.web.nhl.com/api/v1/venues/", text=text)
+
+    with open(os.path.join(DIRECTORY, "data/venues_5094.json"), encoding="utf-8") as f:
+        text = f.read()
+        requests_mock.get("http://statsapi.web.nhl.com/api/v1/venues/5094", text=text)
+        requests_mock.get("https://statsapi.web.nhl.com/api/v1/venues/5094", text=text)

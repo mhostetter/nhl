@@ -1,0 +1,89 @@
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
+  "venues" : [ {
+    "id" : 5076,
+    "name" : "Enterprise Center",
+    "link" : "/api/v1/venues/5076",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5064,
+    "name" : "Ball Arena",
+    "link" : "/api/v1/venues/5064",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5098,
+    "name" : "Xcel Energy Center",
+    "link" : "/api/v1/venues/5098",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5030,
+    "name" : "Bridgestone Arena",
+    "link" : "/api/v1/venues/5030",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5019,
+    "name" : "American Airlines Center",
+    "link" : "/api/v1/venues/5019",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5059,
+    "name" : "Nationwide Arena",
+    "link" : "/api/v1/venues/5059",
+    "appEnabled" : "true"
+  }, {
+    "id" : 310,
+    "name" : "NASSAU LIVE CENTER",
+    "link" : "/api/v1/venues/310",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5178,
+    "name" : "T-Mobile Arena",
+    "link" : "/api/v1/venues/5178",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5092,
+    "name" : "United Center",
+    "link" : "/api/v1/venues/5092",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5017,
+    "name" : "Amalie Arena",
+    "link" : "/api/v1/venues/5017",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5081,
+    "name" : "STAPLES Center",
+    "link" : "/api/v1/venues/5081",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5067,
+    "name" : "Prudential Center Map & Info",
+    "link" : "/api/v1/venues/5067",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5066,
+    "name" : "PNC Arena",
+    "link" : "/api/v1/venues/5066",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5058,
+    "name" : "Canada Life Centre",
+    "link" : "/api/v1/venues/5058",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5094,
+    "name" : "Capital One Arena",
+    "link" : "/api/v1/venues/5094",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5027,
+    "name" : "FLA Live Arena",
+    "link" : "/api/v1/venues/5027",
+    "appEnabled" : "true"
+  }, {
+    "id" : 5046,
+    "name" : "Honda Center",
+    "link" : "/api/v1/venues/5046",
+    "appEnabled" : "true"
+  } ]
+}
