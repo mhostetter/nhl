@@ -9,7 +9,7 @@ from . import statsapi
 from ._conference import Conference
 from ._division import Division
 # from .event import Event
-# from .franchise import Franchise
+from ._franchise import Franchise
 # from .game import Game
 # from .gameinfo import GameInfo
 # from .gametime import Gametime
