@@ -35,7 +35,7 @@ def test_fetch_and_parse(http_mock):
     assert player.position == "LW"
     assert player.height == 75
     assert player.height_ft_in == (6, 3)
-    assert player.weight == 235
+    assert player.weight == 238
     assert player.shoots_catches == "R"
     assert player.birth_date.year == 1985
     assert player.birth_date.month == 9

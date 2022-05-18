@@ -1,5 +1,5 @@
 {
-  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2019. All Rights Reserved.",
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
   "people" : [ {
     "id" : 8471214,
     "fullName" : "Alex Ovechkin",
@@ -8,12 +8,12 @@
     "lastName" : "Ovechkin",
     "primaryNumber" : "8",
     "birthDate" : "1985-09-17",
-    "currentAge" : 33,
+    "currentAge" : 36,
     "birthCity" : "Moscow",
     "birthCountry" : "RUS",
     "nationality" : "RUS",
     "height" : "6' 3\"",
-    "weight" : 235,
+    "weight" : 238,
     "active" : true,
     "alternateCaptain" : false,
     "captain" : true,
