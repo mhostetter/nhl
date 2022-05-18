@@ -9,6 +9,11 @@ def http_mock(requests_mock):
     """
     Mocks the API endpoints so unit tests and CI don't overload the API webserver.
     """
+    with open(os.path.join(DIRECTORY, "data/conferences.json"), encoding="utf-8") as f:
+        text = f.read()
+        requests_mock.get("http://statsapi.web.nhl.com/api/v1/conferences/", text=text)
+        requests_mock.get("https://statsapi.web.nhl.com/api/v1/conferences/", text=text)
+
     with open(os.path.join(DIRECTORY, "data/conferences_6.json"), encoding="utf-8") as f:
         text = f.read()
         requests_mock.get("http://statsapi.web.nhl.com/api/v1/conferences/6", text=text)

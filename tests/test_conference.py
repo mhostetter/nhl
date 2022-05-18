@@ -31,3 +31,9 @@ def test_fetch_and_parse(http_mock):
     assert conference.name == "Eastern"
     assert conference.name_short == "East"
     assert conference.abbreviation == "E"
+
+
+def test_fetch_and_parse_all(http_mock):
+    conferences = nhl.statsapi.conferences()
+    assert [conference.id for conference in conferences] == [6, 5]
+    assert [conference.name for conference in conferences] == ["Eastern", "Western"]
