@@ -1,9 +1,0 @@
-{
-  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2019. All Rights Reserved.",
-  "venues" : [ {
-    "id" : 5094,
-    "name" : "Capital One Arena",
-    "link" : "/api/v1/venues/5094",
-    "appEnabled" : true
-  } ]
-}
