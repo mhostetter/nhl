@@ -31,3 +31,11 @@ def test_fetch_and_parse(http_mock):
     assert division.name == "Metropolitan"
     assert division.name_short == "Metro"
     assert division.abbreviation == "M"
+
+
+def test_fetch_and_parse_all(http_mock):
+    divisions = nhl.statsapi.divisions()
+    assert [division.id for division in divisions] == [17, 16, 18, 15]
+    assert [division.name for division in divisions] == ["Atlantic", "Central", "Metropolitan", "Pacific"]
+    assert [division.name_short for division in divisions] == ["ATL", "CEN", "Metro", "PAC"]
+    assert [division.abbreviation for division in divisions] == ["A", "C", "M", "P"]
