@@ -12,20 +12,20 @@ def test_fail_no_args():
         nhl.Franchise()
 
 
-def test_frozen():
+def test_frozen(http_mock):
     franchise = nhl.statsapi.franchise(24)
     with pytest.raises(dataclasses.FrozenInstanceError):
         franchise.id = 2
 
 
-# def test_flyweight():
+# def test_flyweight(http_mock):
 #     franchise_1 = nhl.statsapi.franchise(24)
 #     franchise_2 = nhl.statsapi.franchise(24)
 #     assert franchise_1 is franchise_2
 #     assert franchise_1 == franchise_2
 
 
-def test_fetch_and_parse():
+def test_fetch_and_parse(http_mock):
     franchise = nhl.statsapi.franchise(24)
     assert franchise.id == 24
     assert franchise.name == "Capitals"

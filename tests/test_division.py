@@ -12,20 +12,20 @@ def test_fail_no_args():
         nhl.Division()
 
 
-def test_frozen():
+def test_frozen(http_mock):
     division = nhl.statsapi.division(18)
     with pytest.raises(dataclasses.FrozenInstanceError):
         division.id = 2
 
 
-# def test_flyweight():
+# def test_flyweight(http_mock):
 #     division_1 = nhl.statsapi.division(18)
 #     division_2 = nhl.statsapi.division(18)
 #     assert division_1 is division_2
 #     assert division_1 == division_2
 
 
-def test_fetch_and_parse():
+def test_fetch_and_parse(http_mock):
     division = nhl.statsapi.division(18)
     assert division.id == 18
     assert division.name == "Metropolitan"
