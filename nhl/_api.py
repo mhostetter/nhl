@@ -1,18 +1,22 @@
-from typing import Dict
+from typing_extensions import Literal
 
 import requests
 
-BASE = "https://statsapi.web.nhl.com/api/v1"
+STATSAPI_BASE = "https://statsapi.web.nhl.com/api/v1"
+HTMLREPORTS_BASE = "https://www.nhl.com/scores/htmlreports"
 
 
-def fetch(url: str) -> Dict:
+def fetch(sub_url: str, base: Literal["statsapi", "htmlreports"] = "statsapi") -> requests.Response:
     """
-    Fetchs a URL from the NHL statsapi and returns its JSON.
+    Fetches a web response.
     """
-    full_url = f"{BASE}/{url}"
-    response = requests.get(full_url)
+    if base == "statsapi":
+        url = f"{STATSAPI_BASE}/{sub_url}"
+    else:
+        url = f"{HTMLREPORTS_BASE}/{sub_url}"
+    response = requests.get(url)
 
     if not response.ok:
-        raise Exception(f"Failed to fetch {full_url}. Status code: {response.status_code}. Reason: {response.reason}.")
+        raise Exception(f"Failed to fetch {response.url}. Status code: {response.status_code}. Reason: {response.reason}.")
 
-    return response.json()
+    return response

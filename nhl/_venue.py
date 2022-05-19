@@ -38,7 +38,7 @@ def venue(id: int) -> Venue:
     :
         A :obj:`~nhl.Venue` object.
     """
-    json = fetch(f"venues/{id}")
+    json = fetch(f"venues/{id}").json()
     return parse(json["venues"][0])
 
 
@@ -52,7 +52,7 @@ def venues() -> List[Venue]:
     :
         A list of :obj:`~nhl.Venue` objects.
     """
-    json = fetch("venues/")
+    json = fetch("venues/").json()
     return list(parse(item) for item in json["venues"])
 
 

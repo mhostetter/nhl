@@ -40,7 +40,7 @@ def division(id: int) -> Division:
     :
         A :obj:`~nhl.Division` object.
     """
-    json = fetch(f"divisions/{id}")
+    json = fetch(f"divisions/{id}").json()
     return parse(json["divisions"][0])
 
 
@@ -54,7 +54,7 @@ def divisions() -> List[Division]:
     :
         A list of :obj:`~nhl.Division` objects.
     """
-    json = fetch("divisions/")
+    json = fetch("divisions/").json()
     return list(parse(item) for item in json["divisions"])
 
 
