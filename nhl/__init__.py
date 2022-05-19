@@ -14,7 +14,7 @@ from ._franchise import Franchise
 # from .gameinfo import GameInfo
 from ._gametime import GameTime
 # from .list import List
-# from .location import Location
+from ._location import Location
 from ._official import Official
 from ._player import Player
 # from .playerstats import PlayerStats
