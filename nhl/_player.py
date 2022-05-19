@@ -20,21 +20,21 @@ def parse(json: Dict) -> Player:
     #     return Player.from_key(id)
 
     name = json["fullName"]
-    # NOTE: Occassionally this key is not provided
+    # NOTE: Occasionally this key is not provided
     _number = json.get("primaryNumber", None)
     number = int(_number) if _number else None
     position = json["primaryPosition"]["abbreviation"]
-    height = parse_height(json["height"])
+    height = convert_height(json["height"])
     weight = json["weight"]
     shoots_catches = json["shootsCatches"]
-    birth_date = parse_date(json["birthDate"])
+    birth_date = convert_date(json["birthDate"])
     birth_city = json["birthCity"]
     birth_country = json["birthCountry"]
 
     return Player(id, name, number, position, height, weight, shoots_catches, birth_date, birth_city, birth_country)
 
 
-def parse_height(height_str: str) -> int:
+def convert_height(height_str: str) -> int:
     """
     Converts the height string from the NHL statsapi to inches. Ex: '6' 3"' -> 75 in.
     """
@@ -43,7 +43,7 @@ def parse_height(height_str: str) -> int:
     return feet*12 + inches
 
 
-def parse_date(date_str: str) -> datetime.date:
+def convert_date(date_str: str) -> datetime.date:
     """
     Converts the date string from the NHL statsapi to a date object. Ex: '1985-09-17' -> datetime.date(1985, 09, 17).
     """
@@ -68,7 +68,7 @@ def player(id: int) -> Player:
     :
         A :obj:`~nhl.Player` object.
     """
-    json = fetch(f"people/{id}")
+    json = fetch(f"people/{id}").json()
     return parse(json["people"][0])
 
 

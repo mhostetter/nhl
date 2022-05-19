@@ -38,7 +38,7 @@ def franchise(id: int) -> Franchise:
     :
         A :obj:`~nhl.Franchise` object.
     """
-    json = fetch(f"franchises/{id}")
+    json = fetch(f"franchises/{id}").json()
     return parse(json["franchises"][0])
 
 
@@ -52,7 +52,7 @@ def franchises() -> List[Franchise]:
     :
         A list of :obj:`~nhl.Franchise` objects.
     """
-    json = fetch("franchises/")
+    json = fetch("franchises/").json()
     return list(parse(item) for item in json["franchises"])
 
 

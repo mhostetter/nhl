@@ -42,7 +42,7 @@ def conference(id: int) -> Conference:
     :
         A :obj:`~nhl.Conference` object.
     """
-    json = fetch(f"conferences/{id}")
+    json = fetch(f"conferences/{id}").json()
     return parse(json["conferences"][0])
 
 
@@ -56,7 +56,7 @@ def conferences() -> List[Conference]:
     :
         A list of :obj:`~nhl.Conference` objects.
     """
-    json = fetch("conferences/")
+    json = fetch("conferences/").json()
     return list(parse(item) for item in json["conferences"])
 
 

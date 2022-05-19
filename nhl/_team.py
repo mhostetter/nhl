@@ -45,7 +45,7 @@ def team(id: int) -> Team:
     :
         A :obj:`~nhl.Team` object.
     """
-    json = fetch(f"teams/{id}")
+    json = fetch(f"teams/{id}").json()
     return parse(json["teams"][0])
 
 
@@ -59,7 +59,7 @@ def teams() -> List[Team]:
     :
         A list of :obj:`~nhl.Team` objects.
     """
-    json = fetch("teams/")
+    json = fetch("teams/").json()
     return list(parse(item) for item in json["teams"])
 
 
