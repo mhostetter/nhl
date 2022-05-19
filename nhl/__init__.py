@@ -18,6 +18,6 @@ from ._gametime import GameTime
 from ._official import Official
 from ._player import Player
 # from .playerstats import PlayerStats
-# from .shift import Shift
+from ._shift import Shift
 from ._team import Team
 from ._venue import Venue
