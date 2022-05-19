@@ -16,7 +16,7 @@ JSON = {
 
 
 def test_fail_no_args():
-    with pytest.raises((IndexError, TypeError)):
+    with pytest.raises(TypeError):
         nhl.Official()
 
 
@@ -33,7 +33,7 @@ def test_frozen():
 #     assert official_1 == official_2
 
 
-def test_fetch_and_parse():
+def test_parse():
     official = nhl._official.parse(JSON)
     assert official.id == 2332
     assert official.name == "Wes McCauley"
