@@ -1,0 +1,36 @@
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
+  "people" : [ {
+    "id" : 8471675,
+    "fullName" : "Sidney Crosby",
+    "link" : "/api/v1/people/8471675",
+    "firstName" : "Sidney",
+    "lastName" : "Crosby",
+    "primaryNumber" : "87",
+    "birthDate" : "1987-08-07",
+    "currentAge" : 34,
+    "birthCity" : "Cole Harbour",
+    "birthStateProvince" : "NS",
+    "birthCountry" : "CAN",
+    "nationality" : "CAN",
+    "height" : "5' 11\"",
+    "weight" : 200,
+    "active" : true,
+    "alternateCaptain" : false,
+    "captain" : true,
+    "rookie" : false,
+    "shootsCatches" : "L",
+    "rosterStatus" : "Y",
+    "currentTeam" : {
+      "id" : 5,
+      "name" : "Pittsburgh Penguins",
+      "link" : "/api/v1/teams/5"
+    },
+    "primaryPosition" : {
+      "code" : "C",
+      "name" : "Center",
+      "type" : "Forward",
+      "abbreviation" : "C"
+    }
+  } ]
+}
