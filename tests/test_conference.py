@@ -8,7 +8,7 @@ import nhl
 
 
 def test_fail_no_args():
-    with pytest.raises((IndexError, TypeError)):
+    with pytest.raises(TypeError):
         nhl.Conference()
 
 
