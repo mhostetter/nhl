@@ -3,7 +3,7 @@ A Python 3 API for NHL game and player stats.
 """
 from ._version import __version__
 
-# from . import rink
+from . import rink
 from . import statsapi
 
 from ._conference import Conference
