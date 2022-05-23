@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 from . import _player
 from ._api import fetch
-from ._gametime import GameTime
+from ._gametime import GameTime, convert_gametime
 from ._overrides import set_module
 
 
@@ -48,13 +48,6 @@ def parse(game_id: int, player_id: int, name: str, home_html: str, away_html: st
         return None
 
     return shifts_
-
-
-def convert_gametime(period_time: str) -> int:
-    """
-    Converts a string of the form "mm:ss" to total seconds.
-    """
-    return 60*int(period_time.split(":")[0]) + int(period_time.split(":")[1])
 
 
 @set_module("nhl.statsapi")

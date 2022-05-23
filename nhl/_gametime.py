@@ -9,6 +9,13 @@ from typing import Tuple
 from ._overrides import set_module
 
 
+def convert_gametime(period_time: str) -> int:
+    """
+    Converts a string of the form "mm:ss" to total seconds.
+    """
+    return 60*int(period_time.split(":")[0]) + int(period_time.split(":")[1])
+
+
 @set_module("nhl")
 @dataclass(frozen=True)
 class GameTime:
