@@ -39,16 +39,18 @@ version = nhl.__version__
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
     "sphinx.ext.mathjax",
     "sphinx.ext.intersphinx",
+    "sphinx_last_updated_by_git",
     "sphinx_immaterial",
-    "myst_parser",
+    "sphinx_immaterial.apidoc.python.apigen",
+    "sphinx_math_dollar",
+    # "myst_parser",
+    "myst_nb",
     "sphinx_design",
-    "sphinxcontrib.details.directive",
     "IPython.sphinxext.ipython_console_highlighting",
-    "IPython.sphinxext.ipython_directive"
+    "IPython.sphinxext.ipython_directive",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
