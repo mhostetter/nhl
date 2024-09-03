@@ -99,7 +99,7 @@ jobs:
       with:
         path: nhl/
     - name: Download wheel artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist
         path: dist/
